@@ -18,6 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string("name")->unique();
             $table->bigInteger("leader_id")->default(0);
             $table->tinyInteger("status")->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
