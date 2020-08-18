@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(TeamSeeder::class);
         $this->call(users::class);
 
         if (config('variables.WITH_FAKER')) {
