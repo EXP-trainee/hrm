@@ -12,10 +12,10 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.users') ? 'active' : '' }}" href="{{ route(ADMIN . '.users.index') }}">
+    <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.userinfors') ? 'active' : '' }}" href="{{ route(ADMIN . '.user_infor.index') }}">
         <span class="icon-holder">
             <i class="c-brown-500 ti-user"></i>
         </span>
-        <span class="title">Users</span>
+        <span class="title">Users Information</span>
     </a>
 </li>

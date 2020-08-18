@@ -10,7 +10,7 @@ Auth::routes();
 | Admin
 |------------------------------------------------------------------------------------
 */
-Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
+Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     //Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('users', 'UserController');
