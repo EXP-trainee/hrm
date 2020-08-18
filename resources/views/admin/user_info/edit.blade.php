@@ -36,56 +36,102 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('infouser.update',['infouser'=>$findInfoUser->id])}}" method="POST">
+              <form role="form" action="{{route('admin.user-infos.update',['user-info'=>$findUser_info->id])}}" method="POST">
                 @method('PUT')
                 <div class="card-body">
                   @csrf
                   <div class="form-group">
                     <label for="username">Full name</label>
-                    <input value="{{$findInfoUser->username}}" type="text" name="username" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$findUser_info->username}}" type="text" name="username" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
         
                   <div class="form-group">
-                      <label for="email">Email</label>
-                      <input value="{{$findInfoUser->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <label for="avatar">avatar</label>
+                      <input value="{{$findUser_info->avatar}}" type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
-                      <label for="numberphone">Number phone</label>
-                      <input value="{{$findInfoUser->numberphone}}" type="text" name="numberphone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <label for="phone"> phone</label>
+                      <input value="{{$findUser_info->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">10 số</small>
                   </div>
 
                   <div class="form-group">
-                    <label for="cmnd">so chung minh tu</label>
-                    <input value="{{$findInfoUser->cmnd}}" type="text" name="cmnd" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label for="phone_2"> phone_2 </label>
+                    <input value="{{$findUser_info->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
           
                   <div class="form-group">
                       <label for="dateofbirth">Date of birth </label>
-                      <input value="{{$findInfoUser->dateofbirth}}" type="text" name="dateofbirth" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">yyyy/mm/dd</small>
+                      <input value="{{$findUser_info->dateofbirth}}" type="text" name="dateofbirth" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="sex">Sex</label>
-                      <input value="{{$findInfoUser->sex}}" type="text" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$findUser_info->sex}}" type="text" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">nam / nữ / giới tính khác</small>
                   </div>
           
                   <div class="form-group">
                       <label for="address">Address</label>
-                      <input value="{{$findInfoUser->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$findUser_info->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">tỉnh/thành phố</small>
                   </div>
                   <div class="form-group">
                     <label for="user_id">User ID</label>
-                    <input value="{{$findInfoUser->user_id}}" type="text" name="user_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$findUser_info->user_id}}" type="text" name="user_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted">tỉnh/thành phố</small>
                 </div>
+                <div class="form-group">
+                  <label for="username">Full name</label>
+                  <input value="{{$findUser_info->username}}" type="text" name="username" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted"></small>
+                </div>
+      
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input value="{{$findUser_info->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                </div>
+        
+                <div class="form-group">
+                    <label for="numberphone">Number phone</label>
+                    <input value="{{$findUser_info->numberphone}}" type="text" name="numberphone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">10 số</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="cmnd">so chung minh tu</label>
+                  <input value="{{$findUser_info->cmnd}}" type="text" name="cmnd" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted"></small>
+              </div>
+        
+                <div class="form-group">
+                    <label for="dateofbirth">Date of birth </label>
+                    <input value="{{$findUser_info->dateofbirth}}" type="text" name="dateofbirth" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">yyyy/mm/dd</small>
+                </div>
+        
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <input value="{{$findUser_info->sex}}" type="text" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">nam / nữ / giới tính khác</small>
+                </div>
+        
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input value="{{$findUser_info->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">tỉnh/thành phố</small>
+                </div>
+                <div class="form-group">
+                  <label for="user_id">User ID</label>
+                  <input value="{{$findUser_info->user_id}}" type="text" name="user_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted"></small>
+              </div>
                   {{-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
