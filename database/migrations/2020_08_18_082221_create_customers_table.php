@@ -33,6 +33,10 @@ class CreateCustomersTable extends Migration
             $table->tinyInteger('status');
             $table->softDeletes();
             $table->timestamps();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('team_id')->unsigned();
+            $table->foreign('team_id')->references('id')->on('teams');
         });
     }
 
