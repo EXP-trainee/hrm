@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('driving_license')->nullable();
             $table->string('driving_license_image')->nullable();
             $table->text('address')->nullable();
+            $table->string('relationship', 500)->nullable();
             $table->json('banks')->nullable();
             $table->integer('role')->default(0);
             $table->text('bio')->nullable();
