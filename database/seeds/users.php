@@ -18,9 +18,9 @@ class users extends Seeder
         
         for ($i = 1; $i <= 1 ; $i++) {
             array_push($data, [
-                'name'     => 'hadji kouceyla',
+                'name'     => 'exp',
                 'email'    => 'test@example.com',
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('12345678'),
             ]);
         }
 
@@ -28,7 +28,7 @@ class users extends Seeder
             array_push($data, [
                 'name'     => $faker->name(),
                 'email'    => $faker->email,
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('12345678'),
             ]);
         }
         
