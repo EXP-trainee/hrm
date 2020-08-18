@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User_infor;
 
-class User_inforController extends Controller
+class UserinforController extends Controller
 {
     function __construct()
     {

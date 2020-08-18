@@ -14,7 +14,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/', 'DashboardController@index')->name('dash');
     //Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('users', 'UserController');
-    Route::resource('userinfors', 'User_inforController');
+    Route::resource('userinfors', 'UserinforController');
     Route::resource('teams', 'TeamController');
 
 });
