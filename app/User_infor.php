@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User_infor extends Model
 {
     use SoftDeletes;
-    protected $table ="infousers";
+    protected $table ="userinfors";
 
     public function user()
     {

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomersTable extends Migration
+class CreateUserinforsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCustomersTable extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('userinfors', function (Blueprint $table) {
             $table->id();
             $table->string('username');
             $table->string('avatar')->nullable();
@@ -33,10 +33,11 @@ class CreateCustomersTable extends Migration
             $table->tinyInteger('status');
             $table->softDeletes();
             $table->timestamps();
+            
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+
             $table->bigInteger('team_id')->unsigned();
-            $table->foreign('team_id')->references('id')->on('teams');
+
         });
     }
 
@@ -47,6 +48,6 @@ class CreateCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('userinfors');
     }
 }
