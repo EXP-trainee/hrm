@@ -21,8 +21,6 @@ class users extends Seeder
                 'name'     => 'hadji kouceyla',
                 'email'    => 'test@example.com',
                 'password' => bcrypt('123456'),
-                'role'     => 10,
-                'bio'      => $faker->realText(),
             ]);
         }
 
@@ -31,8 +29,6 @@ class users extends Seeder
                 'name'     => $faker->name(),
                 'email'    => $faker->email,
                 'password' => bcrypt('123456'),
-                'role'     => 0,
-                'bio'      => $faker->realText(),
             ]);
         }
         
