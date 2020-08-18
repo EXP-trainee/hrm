@@ -35,7 +35,7 @@
               <div class="card">
                 <div class="card-header">
                   {{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
-                  <h3 class="card-title"><a href="{{route('userinfors.create')}}"><button class="btn btn-primary">Create InfoUser</button></a></h3>
+                  <h3 class="card-title"><a href="{{route('user-infos.create')}}"><button class="btn btn-primary">Create InfoUser</button></a></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -43,13 +43,23 @@
                     <thead>
                       <tr>
                           <th>STT</th>
-                          <th>Full name</th>
-                          <th>email</th>
-                          <th>Number Phone</th>
-                          <th>CMND</th>
-                          <th>Date of Birth</th>
-                          <th>Sex</th>
+                          <th>User name</th>
+                          <th>Avatar</th>
+                          <th>Phone</th>
+                          <th>Phone 2</th>
+                          <th>Phone emergency</th>
+                          <th>Dob</th>
+                          <th>National ID</th>
+                          <th>National ID Image</th>
+                          <th>Driving license</th>
+                          <th>Driving license image</th>
                           <th>Address</th>
+                          <th>Relationship</th>
+                          <th>Banks</th>
+                          <th>Role</th>
+                          <th>Bio</th>
+                          <th>Status</th>
+                          <th>Team ID</th>
                           <th>User ID</th>
                           <th>action</th>
                       </tr>
@@ -59,17 +69,27 @@
                       <tr>
                           <td>{{$item->id}}</td>
                           <td>{{$item->username}}</td>
-                          <td>{{$item->email}}</td>
-                          <td>{{$item->numberphone}}</td>
-                          <td>{{$item->cmnd}}</td>
-                          <td>{{$item->dateofbirth}}</td>
-                          <td>{{$item->sex}}</td>
+                          <td>{{$item->avatar}}</td>
+                          <td>{{$item->phone}}</td>
+                          <td>{{$item->phone_2}}</td>
+                          <td>{{$item->phone_emergency}}</td>
+                          <td>{{$item->dob}}</td>
+                          <td>{{$item->national_id}}</td>
+                          <td>{{$item->national_id_image}}</td>
+                          <td>{{$item->driving_license}}</td>
+                          <td>{{$item->driving_license_image}}</td>
                           <td>{{$item->address}}</td>
+                          <td>{{$item->relationship}}</td>
+                          <td>{{$item->banks}}</td>
+                          <td>{{$item->role}}</td>
+                          <td>{{$item->bio}}</td>
+                          <td>{{$item->status}}</td>
                           <td>{{$item->user_id}}</td>
+                          <td>{{$item->team_id}}</td>
                           <td>
-                              <a href="{{route('userinfors.edit',['userinfors' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              <a href="{{route('user-infos.edit',['userinfo' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
-                              <form action="{{route('userinfors.destroy',['userinfors' => $item->id])}}" method="post">
+                              <form action="{{route('user-infos.destroy',['userinfo' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden ="true"></i></button>
@@ -79,7 +99,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                  {{$listUser->links()}}
+                  {{-- {{$listUser->links()}} --}}
                 </div> 
                 <!-- /.card-body -->
               </div>

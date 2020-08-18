@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User_infor;
+use App\User_info;
 
-class UserInforController extends Controller
+class UserinfoController extends Controller
 {
 
     /**
@@ -15,9 +15,9 @@ class UserInforController extends Controller
      */
     public function index()
     {
-        $listUser_infor = User_infor::all();  
-        $listUser_infor = User_infor::paginate(3);
-        return view('admin.user_infor.index', ['listUser_infor' => $listUser_infor]);
+        $listUser_info = User_info::all();  
+       // $listUser_info = User_info::paginate(10);
+        return view('admin.user-info.index', ['listUser_info' => $listUser_info]);
     }
 
     /**
@@ -27,7 +27,7 @@ class UserInforController extends Controller
      */
     public function create()
     {
-        return view('admin.user_infor.create');
+        return view('admin.user-info.create');
     }
 
     /**
@@ -38,28 +38,28 @@ class UserInforController extends Controller
      */
     public function store(Request $request)
     {
-        $userinfor = new User_infor;
-        $userinfor->username = $request->username;
-        $userinfor->avatar = $request->avatar;
-        $userinfor->phone = $request->phone;
-        $userinfor->phone_2 = $request->phone_2;
-        $userinfor->phone_emergency = $request->phone_emergency;
-        $userinfor->dob = $request->dob;
-        $userinfor->national_id = $request->national_id;
-        $userinfor->national_id_image = $request->national_id_image;
-        $userinfor->driving_license = $request->driving_license;
-        $userinfor->driving_license_image = $request->driving_license_image;
-        $userinfor->address = $request->address;
-        $userinfor->relationship = $request->relationship;
-        $userinfor->banks = $request->banks;
-        $userinfor->role = $request->role;
-        $userinfor->bio = $request->bio;
-        $userinfor->cmnd = $request->cmnd;
-        $userinfor->status = $request->status;
-        $userinfor->user_id = $request->user_id;
-        $userinfor->team_id = $request->team_id;
-        $userinfor->save();
-        return redirect(route('userinfors.index'));
+        $userinfo = new User_info;
+        $userinfo->username = $request->username;
+        $userinfo->avatar = $request->avatar;
+        $userinfo->phone = $request->phone;
+        $userinfo->phone_2 = $request->phone_2;
+        $userinfo->phone_emergency = $request->phone_emergency;
+        $userinfo->dob = $request->dob;
+        $userinfo->national_id = $request->national_id;
+        $userinfo->national_id_image = $request->national_id_image;
+        $userinfo->driving_license = $request->driving_license;
+        $userinfo->driving_license_image = $request->driving_license_image;
+        $userinfo->address = $request->address;
+        $userinfo->relationship = $request->relationship;
+        $userinfo->banks = $request->banks;
+        $userinfo->role = $request->role;
+        $userinfo->bio = $request->bio;
+        $userinfo->cmnd = $request->cmnd;
+        $userinfo->status = $request->status;
+        $userinfo->user_id = $request->user_id;
+        $userinfo->team_id = $request->team_id;
+        $userinfo->save();
+        return redirect(route('userinfos.index'));
     }
 
     /**
@@ -81,8 +81,8 @@ class UserInforController extends Controller
      */
     public function edit($id)
     {
-        $findUser_infor= User_infor::find($id);
-        return view('admin.user_infor.edit',['findUser_infor' => $findUser_infor]);
+        $findUser_info= User_info::find($id);
+        return view('admin.user-info.edit',['findUser_info' => $findUser_info]);
     }
 
     /**
@@ -94,7 +94,7 @@ class UserInforController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $findUpdate = User_infor::find($id);
+        $findUpdate = User_info::find($id);
         $findUpdate->username = $request->username;
         $findUpdate->username = $request->username;
         $findUpdate->avatar = $request->avatar;
@@ -116,7 +116,7 @@ class UserInforController extends Controller
         $findUpdate->user_id = $request->user_id;
         $findUpdate->team_id = $request->team_id;
         $findUpdate->save();
-        return redirect(route('user_infor.index'));
+        return redirect(route('user-info.index'));
     }
 
     /**
@@ -127,7 +127,7 @@ class UserInforController extends Controller
      */
     public function destroy($id)
     {
-        $findDelete = User_infor::find($id)->delete();
-        return redirect(route('userinfors.index'));
+        $findDelete = User_info::find($id)->delete();
+        return redirect(route('userinfos.index'));
     }
 }

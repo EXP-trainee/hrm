@@ -13,7 +13,7 @@ Auth::routes();
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::resource('users', 'UserController');
-    Route::resource('user-infors', 'UserInforController');
+    Route::resource('user-infos', 'UserInfoController');
     Route::resource('teams', 'TeamController');
 
 });
