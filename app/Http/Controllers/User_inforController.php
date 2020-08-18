@@ -65,7 +65,7 @@ class User_inforController extends Controller
         $userinfor->user_id = $request->user_id;
         $userinfor->team_id = $request->team_id;
         $userinfor->save();
-        return redirect(route('userinfor.index'));
+        return redirect(route('userinfors.index'));
     }
 
     /**
@@ -134,6 +134,6 @@ class User_inforController extends Controller
     public function destroy($id)
     {
         $findDelete = User_infor::find($id)->delete();
-        return redirect(route('userinfor.index'));
+        return redirect(route('userinfors.index'));
     }
 }
