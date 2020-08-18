@@ -12,9 +12,8 @@ Auth::routes();
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
-    //Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('users', 'UserController');
-    Route::resource('userinfors', 'UserinforController');
+    Route::resource('user-infors', 'UserInforController');
     Route::resource('teams', 'TeamController');
 
 });
