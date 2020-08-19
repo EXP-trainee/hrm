@@ -26,6 +26,8 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Leader ID</th>
+                            <th>Leader</th>
+                            <th>Member</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -35,6 +37,8 @@
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->leader_id }}</td>
+                                <td></td>
+                                <td></td>
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">

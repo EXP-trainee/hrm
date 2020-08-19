@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\UserInfo;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -37,7 +38,12 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = new Team;
+        Team::create($request->all());
+        // $userinfo->name = $request->name;
+        // $userinfo->leader_id = $request->leader_id;
+        // $userinfo->save();
+        return redirect(route('admin.teams.index'));
     }
 
     /**
@@ -82,6 +88,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        return back();
     }
+
 }
