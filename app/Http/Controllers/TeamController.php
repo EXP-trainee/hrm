@@ -90,5 +90,12 @@ class TeamController extends Controller
         $team->delete();
         return back();
     }
+
+    public function showuserinfo()
+    {
+        $teamusers = UserInfo::with(["team"])->get();
+        dd($teamusers);
+        //return view('admin.teams.index', compact("teamusers"));
+    }
     
 }

@@ -18,8 +18,10 @@ class Team extends Model
 
     public function leader()
     {
+        return $this->hasOne(UserInfo::class, "leader_id");
+    }
+    public function userinfo()
+    {
         return $this->hasOne(UserInfo::class);
     }
-
-
 }

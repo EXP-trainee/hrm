@@ -31,23 +31,23 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($teams as $item)
+                        @foreach($teamusers as $teamuser)
                             <tr class="text-center">
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->name }}</td>
+                                <td>{{ $teamuser->id }}</td>
+                                <td>{{ $teamuser->name }}</td>
+                                <td>{{ $teamuser->$userinfo->name }}</td>
+                                <td>{{ $teamuser->$userinfo->name }}</td>
                                 <td>
-                                    <ul class="list-inline">
+                                    {{-- <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $item), "method"=>"DELETE"]) }}
+                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $teamuser), "method"=>"DELETE"]) }}
                                             <button class="btn btn-sm btn-danger"
                                                     title="{{ trans('app.delete_title') }}">
                                                 <i class="ti ti-close"></i>
                                             </button>
                                             {{ Form::close() }}
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </td>
                             </tr>
                         @endforeach

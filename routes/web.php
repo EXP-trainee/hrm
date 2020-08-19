@@ -24,3 +24,5 @@ Route::get('/', function () {
 Route::get('/showuserinfo', 'UserController@showuserinfo')->name('showuserinfo');
 
 Route::post('/file','UserController@doUpload')-> name('file');
+
+Route::get('/showteam', 'TeamController@showuserinfo')->name('showteam');
