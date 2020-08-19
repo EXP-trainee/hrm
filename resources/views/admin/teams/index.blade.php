@@ -25,7 +25,6 @@
                         <tr class="text-center">
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Leader ID</th>
                             <th>Leader</th>
                             <th>Member</th>
                             <th>Actions</th>
@@ -36,7 +35,6 @@
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->leader_id }}</td>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -57,6 +55,9 @@
                     </table>
                     {{-- {{$teams->id->appends(request()->query())->links()}} --}}
                 </div>
+
+               
+
             </div>
         </div>
         <div id="new-team" class="modal fade" role="dialog">
