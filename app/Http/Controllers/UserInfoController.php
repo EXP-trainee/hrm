@@ -54,7 +54,6 @@ class UserinfoController extends Controller
         $userinfo->banks = $request->banks;
         $userinfo->role = $request->role;
         $userinfo->bio = $request->bio;
-        $userinfo->cmnd = $request->cmnd;
         $userinfo->status = $request->status;
         $userinfo->user_id = $request->user_id;
         $userinfo->team_id = $request->team_id;
@@ -111,7 +110,6 @@ class UserinfoController extends Controller
         $findUpdate->banks = $request->banks;
         $findUpdate->role = $request->role;
         $findUpdate->bio = $request->bio;
-        $findUpdate->cmnd = $request->cmnd;
         $findUpdate->status = $request->status;
         $findUpdate->user_id = $request->user_id;
         $findUpdate->team_id = $request->team_id;

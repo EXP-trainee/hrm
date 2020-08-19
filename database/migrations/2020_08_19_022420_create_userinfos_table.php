@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserinforsTable extends Migration
+class CreateUserinfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUserinforsTable extends Migration
      */
     public function up()
     {
-        Schema::create('userinfors', function (Blueprint $table) {
+        Schema::create('userinfos', function (Blueprint $table) {
             $table->id();
             $table->string('username');
             $table->string('avatar')->nullable();
@@ -37,7 +37,6 @@ class CreateUserinforsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
 
             $table->bigInteger('team_id')->unsigned();
-
         });
     }
 
@@ -48,6 +47,6 @@ class CreateUserinforsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userinfors');
+        Schema::dropIfExists('userinfos');
     }
 }
