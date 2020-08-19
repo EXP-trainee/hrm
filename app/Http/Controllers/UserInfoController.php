@@ -58,7 +58,7 @@ class UserinfoController extends Controller
         $userinfo->user_id = $request->user_id;
         $userinfo->team_id = $request->team_id;
         $userinfo->save();
-        return redirect(route('user-infos.index'));
+        return redirect(route('admin.user-infos.index'));
     }
 
     /**
@@ -114,7 +114,7 @@ class UserinfoController extends Controller
         $findUpdate->user_id = $request->user_id;
         $findUpdate->team_id = $request->team_id;
         $findUpdate->save();
-        return redirect(route('user-infos.index'));
+        return redirect(route('admin.user-infos.index'));
     }
 
     /**
@@ -126,6 +126,6 @@ class UserinfoController extends Controller
     public function destroy($id)
     {
         $findDelete = User_info::find($id)->delete();
-        return redirect(route('user-infos.index'));
+        return redirect(route('admin.user-infos.index'));
     }
 }
