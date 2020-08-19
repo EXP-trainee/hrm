@@ -94,8 +94,9 @@
                   </table>
                 </div> 
                 <!-- /.card-body -->
-                <h1>update img</h1>
                 <hr>
+                <h1>update img</h1>
+                
                 <form action="{{route('file')}}" enctype="multipart/form-data" method="POST">
                   {{ csrf_field() }}
                   <input type="file" name="filesTest" required="true">
