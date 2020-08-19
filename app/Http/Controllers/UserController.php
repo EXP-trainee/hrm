@@ -109,5 +109,13 @@ class UserController extends Controller
         return view('user.index', ['userinfo' => $userinfo]);
         // return $infouser;
     }
+
+    public function doUpload(Request $request)
+    {
+        $file = $request->filesTest;
+
+        $file->move('img', $file->getClientOriginalName());
+        
+    }
 }
 

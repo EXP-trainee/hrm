@@ -94,8 +94,20 @@
                   </table>
                 </div> 
                 <!-- /.card-body -->
+                <h1>update img</h1>
+                <hr>
+                <form action="{{route('file')}}" enctype="multipart/form-data" method="POST">
+                  {{ csrf_field() }}
+                  <input type="file" name="filesTest" required="true">
+                  <br/>
+                  <input type="submit" value="upload">
+                </form> 
+
+              </div>
               </div>
               <!-- /.card -->
+
+
             </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
