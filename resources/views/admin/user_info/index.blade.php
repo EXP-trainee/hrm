@@ -99,7 +99,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                  {{-- {{$listUser->links()}} --}}
+                  {{$listUser_info->links()}}
                 </div> 
                 <!-- /.card-body -->
               </div>

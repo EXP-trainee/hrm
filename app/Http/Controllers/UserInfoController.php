@@ -16,7 +16,7 @@ class UserinfoController extends Controller
     public function index()
     {
         $listUser_info = UserInfo::all();  
-       // $listUser_info = User_info::paginate(10);
+        $listUser_info = UserInfo::paginate(20);
         return view('admin.user_info.index', ['listUser_info' => $listUser_info]);
     }
 
