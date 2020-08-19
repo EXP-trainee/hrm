@@ -13,11 +13,11 @@ class Team extends Model
 
     public function member()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(UserInfo::class);
     }
 
     public function leader()
     {
-        return $this->hasOne(User::class, "leader_id");
+        return $this->hasOne(UserInfo::class);
     }
 }

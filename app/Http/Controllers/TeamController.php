@@ -91,5 +91,8 @@ class TeamController extends Controller
         $team->delete();
         return back();
     }
-
+    public function showteam(){
+        $userinfo = Team::find(1)->userinfo;
+        return $userinfo;
+    }
 }

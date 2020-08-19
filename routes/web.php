@@ -22,3 +22,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/showuserinfo', 'UserController@showuserinfo')->name('showuserinfo');
+
+Route::get('/showteam', 'TeamController@showteam');
