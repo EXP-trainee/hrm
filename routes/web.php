@@ -21,3 +21,4 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/showuserinfo', 'UserController@showuserinfo')->name('showuserinfo');

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\User;
+use App\UserInfo;
 
 class UserController extends Controller
 {
@@ -98,6 +101,14 @@ class UserController extends Controller
         User::destroy($id);
 
         return back()->withSuccess(trans('app.success_destroy')); 
+    }
+
+
+    public function showuserinfo()
+    {
+        $userinfo = User::find(Auth()->id())->userinfo;
+        return view('user.index', ['userinfo' => $userinfo]);
+        // return $infouser;
     }
 }
 

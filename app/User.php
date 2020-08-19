@@ -103,7 +103,7 @@ class User extends Authenticatable
         });
     }
 
-    public function info()
+    public function userinfo()
     {
         return $this->hasOne('App\UserInfo');
     }
