@@ -24,32 +24,45 @@
                         <thead class="thead-dark">
                         <tr class="text-center">
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Leader</th>
-                            <th>Member</th>
+                            <th>Team's Name</th>
+                            <th>Leader's Name</th>
+                            <th>Member's Member</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($teamusers as $teamuser)
+                        @foreach($teams as $item)
                             <tr class="text-center">
-                                <td>{{ $teamuser->id }}</td>
-                                <td>{{ $teamuser->name }}</td>
-                                <td>{{ $teamuser->$userinfo->name }}</td>
-                                <td>{{ $teamuser->$userinfo->name }}</td>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->name }}</td>
+                                    {{-- <td>
+                                        @foreach ($item->user as $vl)
+                                            @if($item->leader_id == 1)
+                                            {{$vl->name}}
+                                            @endif
+                                        @endforeach
+                                    </td> --}}
+                                <td></td>
                                 <td>
-                                    {{-- <ul class="list-inline">
+                                    @foreach ($item->user as $vl)
+                                    {{$vl->name.","}}
+                                    @endforeach
+                                </td>
+                                
+                                <td>
+                                    <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $teamuser), "method"=>"DELETE"]) }}
+                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $item), "method"=>"DELETE"]) }}
                                             <button class="btn btn-sm btn-danger"
                                                     title="{{ trans('app.delete_title') }}">
                                                 <i class="ti ti-close"></i>
                                             </button>
                                             {{ Form::close() }}
                                         </li>
-                                    </ul> --}}
+                                    </ul>
                                 </td>
                             </tr>
+                        {{-- @endforeach --}}
                         @endforeach
                         </tbody>
                     </table>
