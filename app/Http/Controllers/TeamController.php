@@ -16,7 +16,6 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-
         return view("admin.teams.index", compact("teams"));
     }
 
@@ -91,8 +90,5 @@ class TeamController extends Controller
         $team->delete();
         return back();
     }
-    public function showteam(){
-        $userinfo = Team::find(1)->userinfo;
-        return $userinfo;
-    }
+    
 }

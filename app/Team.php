@@ -20,4 +20,6 @@ class Team extends Model
     {
         return $this->hasOne(UserInfo::class);
     }
+
+
 }

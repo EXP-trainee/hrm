@@ -35,8 +35,8 @@
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->name }}</td>
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">

@@ -103,7 +103,6 @@ class UserController extends Controller
         return back()->withSuccess(trans('app.success_destroy')); 
     }
 
-
     public function showuserinfo()
     {
         $userinfo = User::find(Auth()->id())->userinfo;
