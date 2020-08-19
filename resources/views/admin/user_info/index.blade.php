@@ -87,9 +87,9 @@
                           <td>{{$item->user_id}}</td>
                           <td>{{$item->team_id}}</td>
                           <td>
-                              <a href="{{route('admin.user-infos.edit',['user-info' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              <a href="{{route('admin.user-infos.edit',['user_info' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
-                              <form action="{{route('admin.user-infos.destroy',['user-info' => $item->id])}}" method="post">
+                              <form action="{{route('admin.user-infos.destroy',['user_info' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden ="true"></i></button>

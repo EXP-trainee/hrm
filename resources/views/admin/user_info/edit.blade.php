@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('admin.user-infos.update',['user-info'=>$findUser_info->id])}}" method="POST">
+              <form role="form" action="{{route('admin.user-infos.update',['user_info'=>$findUser_info->id])}}" method="POST">
                 @method('PUT')
                 <div class="card-body">
                   @csrf
