@@ -30,7 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($items as $item)
+                        @foreach($teams as $item)
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
@@ -51,7 +51,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{$items->appends(request()->query())->links()}}
+                    {{-- {{$teams->id->appends(request()->query())->links()}} --}}
                 </div>
             </div>
         </div>

@@ -100,31 +100,6 @@
                 </div> 
                 <!-- /.card-body -->
 
-                <!-- /.card-body -->
-                {{-- <div class="card-body">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>STT</th>
-                          <th>Full name</th>
-                          <th> Salary</th>
-                          <th>User ID</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <td>{{$salary->id}}</td>
-                            <td>{{$salary->username}}</td>
-                            <td>{{$salary->salary}}</td>
-                            <td>{{$salary->user_id}}</td>
-                        </tr>
-                      </tbody>
-                
-                    </table>
-                  </div>  --}}
-                  <!-- /.card-body -->
-
-
               </div>
               <!-- /.card -->
             </div>

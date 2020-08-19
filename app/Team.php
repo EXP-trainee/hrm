@@ -20,4 +20,9 @@ class Team extends Model
     {
         return $this->hasOne(User::class, "leader_id");
     }
+
+    public function userinfo()
+    {
+        return $this->hasOne('App\UserInfo');
+    }
 }
