@@ -103,14 +103,8 @@ class User extends Authenticatable
         });
     }
 
-    // public function userinfo()
-    // {
-    //     return $this->hasOne('App\UserInfo');
-    // }
-
-    // public function team()
-    // {
-    //     // return $this->hasMany(UserInfo::class);
-    //     return $this->belongsToMany('App\Team', 'userinfos', 'team_id', 'user_id');
-    // }
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

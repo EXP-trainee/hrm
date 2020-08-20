@@ -11,14 +11,14 @@ class Team extends Model
 
     protected $fillable = ["name", "leader_id"];
 
-    public function user()
+    public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany('App\User');
         
     }
-
     public function leader()
     {
-        return $this->hasOne(User::class, "leader_id");
+        return $this->hasOne('App\User', "leader_id");
     }
+
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
-use App\UserInfo;
+use App\User;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -92,15 +92,14 @@ class TeamController extends Controller
         return back();
     }
 
-    // public function member()
-    // {
+    public function user()
+    {
    
-    //     $teams = Team::with(["userinfo"])->get();
-    //     $teamusers = UserInfo::with(["team"])->get();
-    //     // dd($teams);
-
-    //     return view('admin.teams.index', compact("teamusers", "teams"));
+        $members = Team::with(["users"])->get();
+        $leader = User::where('id', 'like', '%leader_id%')->get();
+        dd($members);
+        //return view('admin.teams.index', compact("members","leader"));
         
-    // }
+    }
     
 }

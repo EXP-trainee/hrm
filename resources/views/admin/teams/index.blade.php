@@ -31,13 +31,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($teams as $item)
+                        @foreach($members as $item)
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>    
-                                <td>{{ $item->leader_id }}</td>
-                                <td></td>
-                                
+                                <td>{{ $leader->name}}</td>
+
+                                @foreach($users as $user)
+                                    <td>{{ $user->item->name }}</td>
+                                @endforeach
+
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
