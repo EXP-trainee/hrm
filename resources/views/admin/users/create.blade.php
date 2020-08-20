@@ -50,17 +50,17 @@
 						<input type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
 					</div>
-			
-					{{-- <div class="form-group">
+
+					<div class="form-group">
 						<label for="avatar">avatar</label>
 						<input type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
-					</div> --}}
-					<div class="form-group">
+					</div>
+					{{-- <div class="form-group">
 						<label for="avatar">avatar</label>
 						<input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
-					</div>
+					</div> --}}
 					<div class="form-group">
 						<label for="phone"> Phone</label>
 						<input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">

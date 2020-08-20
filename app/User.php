@@ -50,7 +50,7 @@ class User extends Authenticatable
         $common = [
             'email'    => "required|email|unique:users,email,$id",
             'password' => 'nullable|confirmed',
-            'avatar' => 'image',
+            'avatar' => 'string',
         ];
 
         if ($update) {

@@ -21,6 +21,7 @@ class users extends Seeder
                 'name'     => 'exp',
                 'email'    => 'test@example.com',
                 'password' => bcrypt('12345678'),
+                
             ]);
         }
 

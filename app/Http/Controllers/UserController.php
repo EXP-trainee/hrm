@@ -45,6 +45,29 @@ class UserController extends Controller
         User::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
+
+        // $user = new User;
+        // $user->username = $request->username;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->avatar = $request->avatar;
+        // $user->phone = $request->phone;
+        // $user->phone_2 = $request->phone_2;
+        // $user->phone_emergency = $request->phone_emergency;
+        // $user->dob = $request->dob;
+        // $user->national_id = $request->national_id;
+        // $user->national_id_image = $request->national_id_image;
+        // $user->driving_license = $request->driving_license;
+        // $user->driving_license_image = $request->driving_license_image;
+        // $user->address = $request->address;
+        // $user->relationship = $request->relationship;
+        // $user->banks = $request->banks;
+        // $user->role = $request->role;
+        // $user->bio = $request->bio;
+        // $user->status = $request->status;
+        // $user->team_id = $request->team_id;
+        // $user->save();
+        // return redirect(route('admin.uses.index'));
     }
 
     /**
