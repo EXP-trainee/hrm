@@ -36,10 +36,10 @@
                                 <td>{{ $member->id }}</td>
                                 <td>{{ $member->name }}</td> 
                                 <td>{{ $member->name}}</td>
-                                @foreach ($collection as $item)
-                                    
-                                @endforeach
-                                <td>{{ $member->users->name}}</td>
+                                {{-- @foreach ($members as $member)
+                                <td>{{ $member->u->name}}</td>
+                                @endforeach --}} 
+                                <td>{{ $member->name}}</td>
                                
                                 <td>
                                     <ul class="list-inline">

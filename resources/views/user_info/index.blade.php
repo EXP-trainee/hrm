@@ -94,9 +94,6 @@
                   </table>
                 </div> 
                 <!-- /.card-body -->
-                <hr>
-                <h1>update img</h1>
-
               </div>
               </div>
               <!-- /.card -->

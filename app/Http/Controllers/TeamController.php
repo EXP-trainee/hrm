@@ -16,8 +16,10 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-        
-        return view("admin.teams.index", compact("teams"));
+        $members = Team::with(["users"])->get();
+        $leader = User::where('id','like' ,"leader_id")->get();
+        //dd($members);
+        return view('admin.teams.index', compact("members","leader","teams"));
     }
 
     /**
@@ -92,14 +94,14 @@ class TeamController extends Controller
         return back();
     }
 
-    public function user()
-    {
+    // public function getmember()
+    // {
    
-        $members = Team::with(["users"])->get();
-        $leader = User::where('id','like' ,"leader_id")->get();
-        dd($members);
-        //return view('admin.teams.index', compact("members","leader"));
+    //     $members = Team::with(["users"])->get();
+    //     $leader = User::where('id','like' ,"leader_id")->get();
+    //     //dd($members);
+    //     return view('admin.teams.index', compact("members","leader"));
         
-    }
+    // }
     
 }
