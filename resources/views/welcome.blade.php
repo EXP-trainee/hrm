@@ -83,7 +83,7 @@
                 <div class="title m-b-md">
                     Exp Information
                 </div>
-                <h2><a href="{{ route('showuserinfo') }}">Personal Information
+                <h2><a href="{{ route('getuser') }}">Personal Information
                 </a></h2>
                 {{-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

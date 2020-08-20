@@ -125,12 +125,13 @@ class UserController extends Controller
         return back()->withSuccess(trans('app.success_destroy')); 
     }
 
-    // public function showuserinfo()
-    // {
-    //     $userinfo = User::find(auth()->id())->userinfo;
-    //     //return view('user_info.index', ['userinfo' => $userinfo]);
-    //      dd( $userinfo);
-    // }
+    public function getuser()
+    {
+
+        $userinfo = User::find(auth()->id());
+        // dd( $userinfo);
+        return view('user_info.index', compact('userinfo'));
+    }
 
     public function doUpload(Request $request)
     {

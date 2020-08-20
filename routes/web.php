@@ -20,12 +20,11 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
 Route::get('/', function () {
     return view('welcome');
 });
-//Route::get('/showuserinfo', 'UserController@showuserinfo')->name('showuserinfo');
+
+Route::get('/getuser', 'UserController@getuser')->name('getuser');
 
 Route::post('/file','UserController@doUpload')-> name('file');
 
 Route::get('/showteam', 'TeamController@member')->name('showteam');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
