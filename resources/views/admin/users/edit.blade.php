@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST">
+              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" enctype="multipart/form-data >
                 @method('PUT')
                 <div class="card-body">
                   @csrf
@@ -50,17 +50,23 @@
                     <label for="email">email</label>
                     <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
-                </div>
-                <div class="form-group">
-                  <label for="password">password</label>
-                  <input value="{{$item->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                  <small id="helpId" class="text-muted"></small>
-              </div>
+                  </div>
+                  {{-- <div class="form-group">
+                    <label for="password">password</label>
+                    <input value="{{$item->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
         
                   <div class="form-group">
-                      <label for="avatar">avatar</label>
-                      <input value="{{$item->avatar}}" type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted"></small>
+                    <label for="password_confirmation">password_confirmation</label>
+                    <input type="text" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div> --}}
+                  
+                  <div class="form-group">
+                    <label for="avatar">avatar</label>
+                    <input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">

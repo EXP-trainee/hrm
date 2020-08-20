@@ -45,7 +45,7 @@
                           <th>STT</th>
                           <th>Name</th>
                           <th>Emal</th>
-                          <th>Password</th>
+                          {{-- <th>Password</th> --}}
                           <th>Avatar</th>
                           <th>Phone</th>
                           <th>Phone 2</th>
@@ -71,7 +71,7 @@
                           <td>{{$item->id}}</td>
                           <td>{{$item->name}}</td>
                           <td>{{$item->email}}</td>
-                          <td>{{$item->password}}</td>
+                          {{-- <td>{{$item->password}}</td> --}}
                           <td>{{$item->avatar}}</td>
                           <td>{{$item->phone}}</td>
                           <td>{{$item->phone_2}}</td>

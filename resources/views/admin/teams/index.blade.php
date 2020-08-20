@@ -31,20 +31,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($members as $item)
+                        @foreach($members as $member)
                             <tr class="text-center">
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td> 
-                                <td>{{ $leader->name}}</td>
-
-                                @foreach($users as $user)
-                                    <td>{{ $user->users->name}}</td>
+                                <td>{{ $member->id }}</td>
+                                <td>{{ $member->name }}</td> 
+                                <td>{{ $member->name}}</td>
+                                @foreach ($collection as $item)
+                                    
                                 @endforeach
-
+                                <td>{{ $member->users->name}}</td>
+                               
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $item), "method"=>"DELETE"]) }}
+                                            {{ Form::open(["url"=>route(ADMIN.'.teams.destroy', $member), "method"=>"DELETE"]) }}
                                             <button class="btn btn-sm btn-danger"
                                                     title="{{ trans('app.delete_title') }}">
                                                 <i class="ti ti-close"></i>

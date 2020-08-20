@@ -32,10 +32,8 @@ class CreateUsersTable extends Migration
             $table->text('address')->nullable();
             $table->string('relationship', 500)->nullable();
             $table->json('banks')->nullable();
-            $table->integer('role')->default(0);
             $table->text('bio')->nullable();
             $table->tinyInteger('status')->default(1);
-            $table->bigInteger('leader_id')->nullable();
             $table->bigInteger('team_id')->unsigned()->nullable();
             
             $table->softDeletes();
