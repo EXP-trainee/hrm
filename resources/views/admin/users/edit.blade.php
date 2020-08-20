@@ -36,118 +36,118 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('admin.users.update',['user'=>$findUser->id])}}" method="POST">
+              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST">
                 @method('PUT')
                 <div class="card-body">
                   @csrf
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input value="{{$findUser->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
 
                   <div class="form-group">
                     <label for="email">email</label>
-                    <input value="{{$findUser->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
                 <div class="form-group">
                   <label for="password">password</label>
-                  <input value="{{$findUser->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input value="{{$item->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
               </div>
         
                   <div class="form-group">
                       <label for="avatar">avatar</label>
-                      <input value="{{$findUser->avatar}}" type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->avatar}}" type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="phone"> phone</label>
-                      <input value="{{$findUser->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">10 số</small>
                   </div>
 
                   <div class="form-group">
                     <label for="phone_2"> phone_2 </label>
-                    <input value="{{$findUser->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
           
                   <div class="form-group">
                       <label for="phone_emergency">phone emergency </label>
-                      <input value="{{$findUser->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="dob">dob</label>
-                      <input value="{{$findUser->dob}}" type="dob" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->dob}}" type="dob" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">yyyy/mm/dd</small>
                   </div>
           
                   <div class="form-group">
                       <label for="national_id">national id</label>
-                      <input value="{{$findUser->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
                   <div class="form-group">
                     <label for="national_id_image">national id image</label>
-                    <input value="{{$findUser->national_id_image}}" type="text" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->national_id_image}}" type="text" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
                 <div class="form-group">
                   <label for="driving_license">driving license</label>
-                  <input value="{{$findUser->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input value="{{$item->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
                 </div>
       
                 <div class="form-group">
                     <label for="driving_license_image">driving license image</label>
-                    <input value="{{$findUser->driving_license_image}}" type="text" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->driving_license_image}}" type="text" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
         
                 <div class="form-group">
                     <label for="address">address</label>
-                    <input value="{{$findUser->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
 
                 <div class="form-group">
                   <label for="relationship">relationship</label>
-                  <input value="{{$findUser->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
               </div>
         
                 <div class="form-group">
                     <label for="banks">banks </label>
-                    <input value="{{$findUser->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
         
                 <div class="form-group">
                     <label for="role">role</label>
-                    <input value="{{$findUser->role}}" type="text" name="role" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->role}}" type="text" name="role" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
         
                 <div class="form-group">
                     <label for="bio">bio</label>
-                    <input value="{{$findUser->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
 
                 <div class="form-group">
                   <label for="status">status</label>
-                  <input value="{{$findUser->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input value="{{$item->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
                 </div>
 
                 <div class="form-group">
                   <label for="team_id">team id</label>
-                  <input value="{{$findUser->team_id}}" type="text" name="team_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input value="{{$item->team_id}}" type="text" name="team_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
                 </div>
 

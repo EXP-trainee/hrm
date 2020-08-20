@@ -21,8 +21,4 @@ class Team extends Model
     {
         return $this->hasOne(UserInfo::class, "leader_id");
     }
-    public function userinfo()
-    {
-        return $this->hasMany(UserInfo::class);
-    }
 }

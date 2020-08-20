@@ -89,7 +89,7 @@
                           <td>{{$item->status}}</td>
                           <td>{{$item->team_id}}</td>
                           <td>
-                              <a href="{{route('admin.users.edit',['use' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
                               <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
@@ -101,7 +101,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                  {{$items->links()}}
+                  {{-- {{$items->links()}} --}}
                 </div> 
                 <!-- /.card-body -->
               </div>
