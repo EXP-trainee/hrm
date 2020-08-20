@@ -134,12 +134,6 @@
                 </div>
         
                 <div class="form-group">
-                    <label for="role">role</label>
-                    <input value="{{$item->role}}" type="text" name="role" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-        
-                <div class="form-group">
                     <label for="bio">bio</label>
                     <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>

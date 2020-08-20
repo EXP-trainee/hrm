@@ -126,12 +126,6 @@
 						<input type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
 					</div>
-			
-					<div class="form-group">
-						<label for="role">role</label>
-						<input type="text" name="role" id="" class="form-control" placeholder="" aria-describedby="helpId">
-						<small id="helpId" class="text-muted"></small>
-					</div>
 
 					<div class="form-group">
 						<label for="bio">bio</label>
