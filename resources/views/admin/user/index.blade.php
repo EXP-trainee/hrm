@@ -35,7 +35,7 @@
               <div class="card">
                 <div class="card-header">
                   {{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
-                  <h3 class="card-title"><a href="{{route('admin.user-infos.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3>
+                  <h3 class="card-title"><a href="{{route('admin.users.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -43,7 +43,9 @@
                     <thead>
                       <tr>
                           <th>STT</th>
-                          <th>User name</th>
+                          <th>Name</th>
+                          <th>Emal</th>
+                          <th>Password</th>
                           <th>Avatar</th>
                           <th>Phone</th>
                           <th>Phone 2</th>
@@ -60,15 +62,16 @@
                           <th>Bio</th>
                           <th>Status</th>
                           <th>Team ID</th>
-                          <th>User ID</th>
                           <th>action</th>
                       </tr>
                     </thead>
-                    @foreach ($listUser_info as $item)
+                    @foreach ($items as $item)
                     <tbody>
                       <tr>
                           <td>{{$item->id}}</td>
-                          <td>{{$item->username}}</td>
+                          <td>{{$item->name}}</td>
+                          <td>{{$item->email}}</td>
+                          <td>{{$item->password}}</td>
                           <td>{{$item->avatar}}</td>
                           <td>{{$item->phone}}</td>
                           <td>{{$item->phone_2}}</td>
@@ -84,12 +87,11 @@
                           <td>{{$item->role}}</td>
                           <td>{{$item->bio}}</td>
                           <td>{{$item->status}}</td>
-                          <td>{{$item->user_id}}</td>
                           <td>{{$item->team_id}}</td>
                           <td>
-                              <a href="{{route('admin.user-infos.edit',['user_info' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              <a href="{{route('admin.users.edit',['use' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
-                              <form action="{{route('admin.user-infos.destroy',['user_info' => $item->id])}}" method="post">
+                              <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden ="true"></i></button>
@@ -99,7 +101,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                  {{$listUser_info->links()}}
+                  {{$items->links()}}
                 </div> 
                 <!-- /.card-body -->
               </div>

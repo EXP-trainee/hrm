@@ -43,7 +43,8 @@
                     <thead>
                       <tr>
                           <th>STT</th>
-                          <th>User name</th>
+                          <th> Name</th>
+                          <th>Email</th>
                           <th>Avatar</th>
                           <th>Phone</th>
                           <th>Phone 2</th>
@@ -60,14 +61,14 @@
                           <th>Bio</th>
                           <th>Status</th>
                           <th>Team ID</th>
-                          <th>User ID</th>
                           <th>action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                           <td>{{$userinfo->id}}</td>
-                          <td>{{$userinfo->username}}</td>
+                          <td>{{$userinfo->name}}</td>
+                          <td>{{$userinfo->email}}</td>
                           <td>{{$userinfo->avatar}}</td>
                           <td>{{$userinfo->phone}}</td>
                           <td>{{$userinfo->phone_2}}</td>
@@ -84,9 +85,8 @@
                           <td>{{$userinfo->bio}}</td>
                           <td>{{$userinfo->status}}</td>
                           <td>{{$userinfo->team_id}}</td>
-                          <td>{{$userinfo->user_id}}</td>
                           <td>
-                              <a href="{{route('admin.user-infos.edit',['user_info' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
+                              <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
                           </td>
                       </tr>

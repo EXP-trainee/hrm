@@ -11,9 +11,10 @@ class Team extends Model
 
     protected $fillable = ["name", "leader_id"];
 
-    public function member()
+    public function user()
     {
-        return $this->hasMany(UserInfo::class);
+        // return $this->hasMany(UserInfo::class);
+        return $this->belongsToMany('App\User', 'userinfos', 'user_id', 'team_id');
     }
 
     public function leader()
@@ -22,6 +23,6 @@ class Team extends Model
     }
     public function userinfo()
     {
-        return $this->hasOne(UserInfo::class);
+        return $this->hasMany(UserInfo::class);
     }
 }

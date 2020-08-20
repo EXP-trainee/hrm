@@ -30,13 +30,25 @@
 			  </div>
 			  <!-- /.card-header -->
 			  <!-- form start -->
-			  <form role="form" action="{{route('admin.user-infos.store')}}" method="POST">
+			  <form role="form" action="{{route('admin.users.store')}}" method="POST">
 				<div class="card-body">
 				  @csrf
 				  {{-- @method('POST') --}}
 					<div class="form-group">
-						<label for="username">User name</label>
-						<input type="text" name="username" id="" class="form-control" placeholder="" aria-describedby="helpId">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+						<small id="helpId" class="text-muted"></small>
+					</div>
+
+					<div class="form-group">
+						<label for="email">email</label>
+						<input type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+						<small id="helpId" class="text-muted"></small>
+					</div>
+
+					<div class="form-group">
+						<label for="password">password</label>
+						<input type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
 					</div>
 			
@@ -133,12 +145,6 @@
 						<label for="team_id">team id</label>
 						<input type="text" name="team_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
-					</div>
-
-					<div class="form-group">
-					  <label for="user_id">User ID</label>
-					  <input type="text" name="user_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
-					  <small id="helpId" class="text-muted">id user dang nhap</small>
 					</div>
 				  
 				  

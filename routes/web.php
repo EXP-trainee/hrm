@@ -13,7 +13,7 @@ Auth::routes();
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::resource('users', 'UserController');
-    Route::resource('user-infos', 'UserInfoController');
+    // Route::resource('user-infos', 'UserInfoController');
     Route::resource('teams', 'TeamController');
 
 });
@@ -25,4 +25,4 @@ Route::get('/showuserinfo', 'UserController@showuserinfo')->name('showuserinfo')
 
 Route::post('/file','UserController@doUpload')-> name('file');
 
-Route::get('/showteam', 'TeamController@showuserinfo')->name('showteam');
+Route::get('/showteam', 'TeamController@member')->name('showteam');

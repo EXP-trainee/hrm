@@ -16,6 +16,7 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
+        
         return view("admin.teams.index", compact("teams"));
     }
 
@@ -91,11 +92,15 @@ class TeamController extends Controller
         return back();
     }
 
-    public function showuserinfo()
-    {
-        $teamusers = UserInfo::with(["team"])->get();
-        dd($teamusers);
-        //return view('admin.teams.index', compact("teamusers"));
-    }
+    // public function member()
+    // {
+   
+    //     $teams = Team::with(["userinfo"])->get();
+    //     $teamusers = UserInfo::with(["team"])->get();
+    //     // dd($teams);
+
+    //     return view('admin.teams.index', compact("teamusers", "teams"));
+        
+    // }
     
 }
