@@ -33,7 +33,6 @@
 			  <form role="form" action="{{route('admin.users.store')}}" method="POST">
 				<div class="card-body">
 				  @csrf
-				  {{-- @method('POST') --}}
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -52,12 +51,16 @@
 						<small id="helpId" class="text-muted"></small>
 					</div>
 			
-					<div class="form-group">
+					{{-- <div class="form-group">
 						<label for="avatar">avatar</label>
 						<input type="text" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
+					</div> --}}
+					<div class="form-group">
+						<label for="avatar">avatar</label>
+						<input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+						<small id="helpId" class="text-muted"></small>
 					</div>
-			
 					<div class="form-group">
 						<label for="phone"> Phone</label>
 						<input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
