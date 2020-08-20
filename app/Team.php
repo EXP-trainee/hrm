@@ -13,12 +13,12 @@ class Team extends Model
 
     public function user()
     {
-        // return $this->hasMany(UserInfo::class);
-        return $this->belongsToMany('App\User', 'userinfos', 'user_id', 'team_id');
+        return $this->hasMany(User::class);
+        
     }
 
     public function leader()
     {
-        return $this->hasOne(UserInfo::class, "leader_id");
+        return $this->hasOne(User::class, "leader_id");
     }
 }

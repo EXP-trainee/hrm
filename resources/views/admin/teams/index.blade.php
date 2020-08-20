@@ -34,20 +34,9 @@
                         @foreach($teams as $item)
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                    {{-- <td>
-                                        @foreach ($item->user as $vl)
-                                            @if($item->leader_id == 1)
-                                            {{$vl->name}}
-                                            @endif
-                                        @endforeach
-                                    </td> --}}
+                                <td>{{ $item->name }}</td>    
+                                <td>{{ $item->leader_id }}</td>
                                 <td></td>
-                                <td>
-                                    @foreach ($item->user as $vl)
-                                    {{$vl->name.","}}
-                                    @endforeach
-                                </td>
                                 
                                 <td>
                                     <ul class="list-inline">
@@ -62,8 +51,8 @@
                                     </ul>
                                 </td>
                             </tr>
-                        {{-- @endforeach --}}
                         @endforeach
+
                         </tbody>
                     </table>
                     {{-- {{$teams->id->appends(request()->query())->links()}} --}}
