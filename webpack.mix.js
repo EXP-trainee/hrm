@@ -11,29 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.webpackConfig(webpack => {
-    return {
-        plugins: [
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jquery',
-                Popper: ['popper.js', 'default'],
-            })
-        ],
-        resolve: {
-            alias: {
-                'jquery': path.join(__dirname, 'node_modules/jquery/dist/jquery'),
-            }
-        }
-    };
-});
-
-
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/rtl.scss', 'public/css')
-    .copyDirectory('resources/static/images','public/images')
-    .browserSync('https://laradminator.test')
-    .version()
-    .sourceMaps();
+    .sass('resources/sass/app.scss', 'public/css');

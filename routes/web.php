@@ -25,3 +25,7 @@ Route::get('/', function () {
 Route::post('/file','UserController@doUpload')-> name('file');
 
 Route::get('/showteam', 'TeamController@member')->name('showteam');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
