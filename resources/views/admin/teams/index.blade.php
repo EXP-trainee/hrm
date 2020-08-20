@@ -34,11 +34,11 @@
                         @foreach($members as $item)
                             <tr class="text-center">
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>    
+                                <td>{{ $item->name }}</td> 
                                 <td>{{ $leader->name}}</td>
 
                                 @foreach($users as $user)
-                                    <td>{{ $user->item->name }}</td>
+                                    <td>{{ $user->users->name}}</td>
                                 @endforeach
 
                                 <td>

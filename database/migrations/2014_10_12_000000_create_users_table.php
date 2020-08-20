@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->integer('role')->default(0);
             $table->text('bio')->nullable();
             $table->tinyInteger('status')->default(1);
+            $table->bigInteger('leader_id')->nullable();
             $table->bigInteger('team_id')->unsigned()->nullable();
             
             $table->softDeletes();
