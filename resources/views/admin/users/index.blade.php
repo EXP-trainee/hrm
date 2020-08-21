@@ -47,7 +47,7 @@
                         <select id="my-select" class="form-control" name="team_id">
             
                           @foreach ($teams as $item)
-                        <option value="{{$item->id}}"> {{$item->name}} </option>
+                          <option value="{{$item->id}}"> {{$item->name}} </option>
                           @endforeach
                           
                         </select>
