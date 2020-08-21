@@ -87,7 +87,7 @@
                           <td>{{$item->role}}</td>
                           <td>{{$item->bio}}</td>
                           <td>{{$item->status}}</td>
-                          
+
                           {{-- dd(<td>{{$item->getTeam->name}}</td>); --}}
                           <td>{{$item->team_id}}</td>
                           <td>

@@ -19,7 +19,6 @@ class UserController extends Controller
     {
         $items = User::latest('updated_at')->get();
         $items = User::paginate(7);
-
         return view('admin.users.index', compact('items'));
     }
 
@@ -32,6 +31,7 @@ class UserController extends Controller
     {
         $teams = \App\Team::all();
         return view('admin.users.create', compact('teams'));
+        
     }
 
     /**
