@@ -11,6 +11,9 @@
         <span class="title">Dashboard</span>
     </a>
 </li>
+
+@canany("roles.view,create,edit,delete")
+
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.users') ? 'active' : '' }}" href="{{ route(ADMIN . '.users.index') }}">
         <span class="icon-holder">
@@ -19,6 +22,8 @@
         <span class="title">Users Information</span>
     </a>
 </li>
+
+@endcan
 
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.teams') ? 'active' : '' }}" href="{{ route(ADMIN . '.teams.index') }}">

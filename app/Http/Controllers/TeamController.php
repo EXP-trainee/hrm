@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:roles.view', ['only' => ['index','store']]);
+        $this->middleware('permission:roles.create', ['only' => ['create','store']]);
+        $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

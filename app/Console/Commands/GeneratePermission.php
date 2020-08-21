@@ -2,11 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\User;
 use Illuminate\Console\Command;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-
-use App\User;
 
 class GeneratePermission extends Command
 {
@@ -40,22 +39,24 @@ class GeneratePermission extends Command
      * @return int
      */
     public function handle()
-    {
-        
-        Permission::updateOrCreate(['name' => '*'], ['name' => '*']);
-        $role = Role::updateOrCreate(['name' => 'Root'], ['name' => 'Root']);
-        $role->givePermissionTo('*');
-        User::find(1)->assignRole("Root");
+    {       
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
+        Permission::updateOrCreate(['name' => '*'], ['name' => '*']);
         Permission::updateOrCreate(['name' => 'roles.*'], ['name' => 'roles.*']);
         Permission::updateOrCreate(['name' => 'roles.view'],['name' => 'roles.view']);
         Permission::updateOrCreate(['name' => 'roles.create'],['name' => 'roles.create']);
         Permission::updateOrCreate(['name' => 'roles.edit'],['name' => 'roles.edit']);
         Permission::updateOrCreate(['name' => 'roles.delete'],['name' => 'roles.delete']);
 
-        // $role = Role::updateOrCreate(['name' => 'Role Manager'], ['name' => 'Role Manager']);
+        $role = Role::updateOrCreate(['name' => 'Root'], ['name' => 'Root']);
+        $role->givePermissionTo('roles.*');
+        User::find(1)->assignRole("Root");
 
-        // $role->givePermissionTo('roles.*');
+        $role = Role::updateOrCreate(['name' => 'Role User'], ['name' => 'Role User']);
+        $role->givePermissionTo('roles.edit');
+        User::find(2)->assignRole("Role User");
+
         return 0;
     }
 }
