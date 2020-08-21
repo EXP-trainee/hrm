@@ -31,7 +31,7 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-sm-12">
               <div class="card">
                 <div class="card-header">
                   
@@ -47,17 +47,17 @@
                           <th>Email</th>
                           <th>Avatar</th>
                           <th>Phone</th>
-                          <th>Phone 2</th>
-                          <th>Phone emergency</th>
+                          {{-- <th>Phone 2</th>
+                          <th>Phone emergency</th> --}}
                           <th>Dob</th>
                           <th>National ID</th>
-                          <th>National ID Image</th>
-                          <th>Driving license</th>
+                          {{-- <th>National ID Image</th>
+                          <th>Driving license</th> --}}
                           <th>Driving license image</th>
                           <th>Address</th>
                           <th>Relationship</th>
                           <th>Banks</th>
-                          <th>Role</th>
+                          
                           <th>Bio</th>
                           <th>Status</th>
                           <th>Team ID</th>
@@ -70,21 +70,21 @@
                           <td>{{$userinfo->name}}</td>
                           <td>{{$userinfo->email}}</td>
                           <td>{{$userinfo->avatar}}</td>
-                          <td>{{$userinfo->phone}}</td>
-                          <td>{{$userinfo->phone_2}}</td>
-                          <td>{{$userinfo->phone_emergency}}</td>
+                          <td>{{$userinfo->phone}}
+                              {{$userinfo->phone_2}}
+                              {{$userinfo->phone_emergency}}
+                          </td>
                           <td>{{$userinfo->dob}}</td>
                           <td>{{$userinfo->national_id}}</td>
-                          <td>{{$userinfo->national_id_image}}</td>
-                          <td>{{$userinfo->driving_license}}</td>
+                          {{-- <td>{{$userinfo->national_id_image}}</td>
+                          <td>{{$userinfo->driving_license}}</td> --}}
                           <td>{{$userinfo->driving_license_image}}</td>
                           <td>{{$userinfo->address}}</td>
                           <td>{{$userinfo->relationship}}</td>
                           <td>{{$userinfo->banks}}</td>
-                          <td>{{$userinfo->role}}</td>
                           <td>{{$userinfo->bio}}</td>
                           <td>{{$userinfo->status}}</td>
-                          <td>{{$userinfo->team_id}}</td>
+                          <td>{{$userinfo->team?$userinfo->team->name:""}}</td>
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
