@@ -115,7 +115,7 @@ class UserController extends Controller
     {
         $userinfo = User::find(auth()->id());
         // dd( $userinfo);
-        return view('user_info.index', compact('userinfo'));
+        return view('admin.user_info.index', compact('userinfo'));
     }
 
 }
