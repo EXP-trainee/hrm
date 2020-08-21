@@ -39,11 +39,11 @@
                       <h3 class="card-title"><a href="{{route('admin.users.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3>
                     </div>
                     <div class="col-md-4">
-                     
+                      
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label for="my-select">Team</label>
+                        <label for="my-select">Search Team</label>
                         <select id="my-select" class="form-control" name="team_id">
             
                           @foreach ($teams as $item)
@@ -70,16 +70,16 @@
                           <th>Phone emergency</th> --}}
                           <th>Dob</th>
                           <th>National ID</th>
-                          <th>National ID Image</th>
-                          <th>Driving license</th>
+                          {{-- <th>National ID Image</th> --}}
+                          {{-- <th>Driving license</th> --}}
                           <th>Driving license image</th>
                           <th>Address</th>
                           <th>Relationship</th>
                           <th>Banks</th>
-                          <th>Role</th>
+                          {{-- <th>Role</th> --}}
                           <th>Bio</th>
                           <th>Status</th>
-                          <th>Team ID</th>
+                          <th>Team </th>
                           <th>action</th>
                       </tr>
                     </thead>
@@ -98,13 +98,13 @@
                           </td>
                           <td>{{$item->dob}}</td>
                           <td>{{$item->national_id}}</td>
-                          <td>{{$item->national_id_image}}</td>
-                          <td>{{$item->driving_license}}</td>
+                          {{-- <td>{{$item->national_id_image}}</td> --}}
+                          {{-- <td>{{$item->driving_license}}</td> --}}
                           <td>{{$item->driving_license_image}}</td>
                           <td>{{$item->address}}</td>
                           <td>{{$item->relationship}}</td>
                           <td>{{$item->banks}}</td>
-                          <td>{{$item->role}}</td>
+                          {{-- <td>{{$item->role}}</td> --}}
                           <td>{{$item->bio}}</td>
                           <td>{{$item->status}}</td>
 
@@ -135,4 +135,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 @endsection
