@@ -17,10 +17,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $items = User::latest('updated_at')->get();
         $teams = \App\Team::all();
+        $filterteam = \App\Team::all()->filter(function ($teamid, $name){
+            return $name == '';
+        });
+        $items = User::latest('updated_at')->get();
+//         $collection = collect(['anhnq@gmail.com', 'Quang Anh', 'PHP'])
+//             ->filter(function ($key, $value) {
+//         return $value == 't';
+// });
         $items = User::paginate(7);
-        return view('admin.users.index', compact('items','teams'));
+        return view('admin.users.index', compact('items','teams','filterteam'));
     }
 
     /**
