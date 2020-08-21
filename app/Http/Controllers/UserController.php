@@ -22,10 +22,7 @@ class UserController extends Controller
             return $name == '';
         });
         $items = User::latest('updated_at')->get();
-//         $collection = collect(['anhnq@gmail.com', 'Quang Anh', 'PHP'])
-//             ->filter(function ($key, $value) {
-//         return $value == 't';
-// });
+
         $items = User::paginate(7);
         return view('admin.users.index', compact('items','teams','filterteam'));
     }
