@@ -18,8 +18,9 @@ class UserController extends Controller
     public function index()
     {
         $items = User::latest('updated_at')->get();
+        $teams = \App\Team::all();
         $items = User::paginate(7);
-        return view('admin.users.index', compact('items'));
+        return view('admin.users.index', compact('items','teams'));
     }
 
     /**

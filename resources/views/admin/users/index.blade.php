@@ -34,8 +34,26 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  {{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
-                  <h3 class="card-title"><a href="{{route('admin.users.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h3 class="card-title"><a href="{{route('admin.users.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3>
+                    </div>
+                    <div class="col-md-4">
+                     
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="my-select">Team</label>
+                        <select id="my-select" class="form-control" name="team_id">
+            
+                          @foreach ($teams as $item)
+                        <option value="{{$item->id}}"> {{$item->name}} </option>
+                          @endforeach
+                          
+                        </select>
+                      </div>              
+                    </div>
+                  </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -90,8 +108,8 @@
                           <td>{{$item->bio}}</td>
                           <td>{{$item->status}}</td>
 
-                          {{-- dd(<td>{{$item->getTeam->name}}</td>); --}}
-                          <td>{{$item->team?$item->team->name:""}}</td>
+                          {{-- ?là viết tắt của if else --}}
+                          <td>{{$item->team?$item->team->name:""}}</td> 
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
