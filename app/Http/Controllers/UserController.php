@@ -70,8 +70,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $item = User::findOrFail($id);
-
-        return view('admin.users.edit', compact('item'));
+        $teams = \App\Team::all();
+        return view('admin.users.edit', compact('item','teams'));
     }
 
     /**
