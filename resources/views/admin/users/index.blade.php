@@ -39,7 +39,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table class="table table-bordered">
+                  <table class="table table-bordered table-responsive">
                     <thead>
                       <tr>
                           <th>STT</th>
@@ -87,6 +87,8 @@
                           <td>{{$item->role}}</td>
                           <td>{{$item->bio}}</td>
                           <td>{{$item->status}}</td>
+                          
+                          {{-- dd(<td>{{$item->getTeam->name}}</td>); --}}
                           <td>{{$item->team_id}}</td>
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
@@ -101,7 +103,7 @@
                     </tbody>
                     @endforeach
                   </table>
-                  {{-- {{$items->links()}} --}}
+                  {{$items->links()}}
                 </div> 
                 <!-- /.card-body -->
               </div>

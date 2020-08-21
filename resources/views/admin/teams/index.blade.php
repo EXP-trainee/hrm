@@ -36,9 +36,9 @@
                                 <td>{{ $member->id }}</td>
                                 <td>{{ $member->name }}</td> 
                                 <td>{{ $member->name}}</td>
-                                {{-- @foreach ($members as $member)
-                                <td>{{ $member->u->name}}</td>
-                                @endforeach --}} 
+                                {{-- @foreach ($member->relations['users'] as $user)
+                                <td>{{ $users->name}}</td>
+                                @endforeach  --}}
                                 <td>{{ $member->name}}</td>
                                
                                 <td>

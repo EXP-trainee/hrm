@@ -18,6 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $items = User::latest('updated_at')->get();
+        $items = User::paginate(7);
 
         return view('admin.users.index', compact('items'));
     }
@@ -29,7 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $teams = \App\Team::all();
+        return view('admin.users.create', compact('teams'));
     }
 
     /**
@@ -41,7 +43,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, User::rules());
-        
+        // dd(User::create($request->all()))
         User::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));

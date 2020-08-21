@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'bio'
+        'name', 'email', 'password', 'avatar', 'bio', 'team_id',
     ];
 
     /**
@@ -73,6 +73,7 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
     
+    
     public function getAvatarAttribute($value)
     {
         if (!$value) {
@@ -106,5 +107,9 @@ class User extends Authenticatable
     public function team()
     {
         return $this->belongsTo(Team::class);
+    }
+
+    public function getTeam(){
+        return $this->belongsTo('App\Team', 'team_id', 'id');
     }
 }

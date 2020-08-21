@@ -140,9 +140,12 @@
 					</div>
 
 					<div class="form-group">
-						<label for="team_id">team id</label>
-						<input type="text" name="team_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
-						<small id="helpId" class="text-muted"></small>
+						<label for="my-select">Team</label>
+						<select id="my-select" class="form-control" name="team_id">
+							@foreach ($teams as $item)
+						<option value="{{$item->id}}">{{$item->name}}</option>
+							@endforeach
+						</select>
 					</div>
 				  
 				  
