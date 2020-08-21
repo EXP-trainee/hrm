@@ -89,7 +89,7 @@
                           <td>{{$item->status}}</td>
 
                           {{-- dd(<td>{{$item->getTeam->name}}</td>); --}}
-                          <td>{{$item->team_id}}</td>
+                          <td>{{$item->getTeam->name}}</td>
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
