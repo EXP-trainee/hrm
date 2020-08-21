@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Console\Command;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use \Illuminate\Support\Collection;
+
 
 class GeneratePermission extends Command
 {
@@ -32,6 +32,7 @@ class GeneratePermission extends Command
     public function __construct()
     {
         parent::__construct();
+
     }
 
     /**
@@ -56,7 +57,7 @@ class GeneratePermission extends Command
 
         $role = Role::updateOrCreate(['name' => 'Role User'], ['name' => 'Role User']);
         $role->givePermissionTo('roles.edit');
-        User::find(2)->assignRole("Role User");
+        User::find(8)->assignRole("Role User");
 
         return 0;
     }
