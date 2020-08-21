@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Console\Command;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use \Illuminate\Support\Collection;
 
 class GeneratePermission extends Command
 {
