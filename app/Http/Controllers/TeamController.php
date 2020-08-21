@@ -16,10 +16,10 @@ class TeamController extends Controller
     public function index()
     {
         // $teams = Team::all();
-        $members = Team::with(["users"])->get();
-        $leader = User::where('id','like' ,"leader_id")->get();
-        // dd($members);
-        return view('admin.teams.index', compact("members","leader"));
+        $teams = Team::withCount("users")->with(["leader"])->get();
+        //$leader = User::where('id','like' ,"leader_id")->get();
+        //dd($members);
+        return view('admin.teams.index', compact("teams"));
     }
 
     /**

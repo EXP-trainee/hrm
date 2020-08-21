@@ -31,7 +31,7 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
                   {{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
@@ -48,8 +48,8 @@
                           {{-- <th>Password</th> --}}
                           <th>Avatar</th>
                           <th>Phone</th>
-                          <th>Phone 2</th>
-                          <th>Phone emergency</th>
+                          {{-- <th>Phone 2</th>
+                          <th>Phone emergency</th> --}}
                           <th>Dob</th>
                           <th>National ID</th>
                           <th>National ID Image</th>
@@ -72,10 +72,12 @@
                           <td>{{$item->name}}</td>
                           <td>{{$item->email}}</td>
                           {{-- <td>{{$item->password}}</td> --}}
-                          <td>{{$item->avatar}}</td>
-                          <td>{{$item->phone}}</td>
-                          <td>{{$item->phone_2}}</td>
-                          <td>{{$item->phone_emergency}}</td>
+                          <td><img src="{{$item->avatar}}" alt=""></td>
+                          <td>
+                            {{$item->phone}}
+                            {{$item->phone_2}}
+                            {{$item->phone_emergency}}
+                          </td>
                           <td>{{$item->dob}}</td>
                           <td>{{$item->national_id}}</td>
                           <td>{{$item->national_id_image}}</td>
@@ -89,7 +91,7 @@
                           <td>{{$item->status}}</td>
 
                           {{-- dd(<td>{{$item->getTeam->name}}</td>); --}}
-                          <td>{{$item->getTeam->name}}</td>
+                          <td>{{$item->team?$item->team->name:""}}</td>
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
                               
