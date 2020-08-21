@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" enctype="multipart/form-data >
+              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data >
                 @method('PUT')
                 <div class="card-body">
                   @csrf

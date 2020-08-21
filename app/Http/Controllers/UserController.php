@@ -15,16 +15,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $teams = \App\Team::all();
-        $filterteam = \App\Team::all()->filter(function ($teamid, $name){
-            return $name == '';
-        });
-        $items = User::latest('updated_at')->get();
 
-        $items = User::paginate(7);
-        return view('admin.users.index', compact('items','teams','filterteam'));
+        $items = User::latest('updated_at');
+        if($request->has("team_id")){
+            $items = $items->where("team_id",$request->team_id);
+        }
+
+        $items = $items->paginate(7);
+        return view('admin.users.index', compact('items','teams'));
     }
 
     /**
@@ -112,7 +113,6 @@ class UserController extends Controller
 
     public function getuser()
     {
-
         $userinfo = User::find(auth()->id());
         // dd( $userinfo);
         return view('user_info.index', compact('userinfo'));

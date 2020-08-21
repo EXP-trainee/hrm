@@ -44,10 +44,10 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="my-select">Search Team</label>
-                        <select id="my-select" class="form-control" name="team_id">
+                        <select id="my-select" class="form-control" name="team_id" onchange="return location.href=this.value;">
             
                           @foreach ($teams as $item)
-                          <option value="{{$item->id}}"> {{$item->name}} </option>
+                          <option value="{{ route(ADMIN.".users.index", ["team_id" => $item->id]) }}" @if(request("team_id",0) == $item->id) selected @endif> {{$item->name}} </option>
                           @endforeach
                           
                         </select>
