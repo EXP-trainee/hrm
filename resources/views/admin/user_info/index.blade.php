@@ -13,7 +13,7 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1>List Infomation User</h1>
           </div>
           <div class="col-sm-6">
@@ -34,7 +34,16 @@
           <div class="col-md-sm-7">
             <div class="card">
               <div class="card-header">
-                <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation</i></a>
+                <div class="col-md-sm-3">
+                  <div class="card"> 
+                      <h2 style="text-align: center">{{$userinfo->name}}</h2>
+                      <div class="card" style="width:400px">
+                        <img class="card-img-top" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
+                      </div>
+                  </div>
+                </div>
+                <!-- /.card -->    
+               
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -42,10 +51,6 @@
                     <tr>
                       <th>STT</th>
                       <td>{{$userinfo->id}}</td>
-                    </tr>
-                    <tr>
-                      <th> Name</th>
-                      <td>{{$userinfo->name}}</td>
                     </tr>
                     <tr>
                       <th>Email</th>
@@ -57,9 +62,9 @@
                     </tr>
                     <tr>
                       <th>Phone</th>
-                      <td>{{$userinfo->phone}}
-                          {{$userinfo->phone_2}}
-                          {{$userinfo->phone_emergency}}
+                      <td><div>{{$userinfo->phone}}</div>
+                          <div>{{$userinfo->phone_2}}</div>
+                          <div>{{$userinfo->phone_emergency}}</div>
                       </td>
                     </tr>
                     <tr>
@@ -99,27 +104,15 @@
                       <td>{{$userinfo->team?$userinfo->team->name:""}}</td>
                     </tr>
                 </table>
+
+                <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation</i></a>
               </div> 
               <!-- /.card-body -->
             </div>
           </div>
         
           <!-- /.card -->
-          <div class="col-md-sm-3" style="float: right; ">
-            <div class="card"> 
-                <h2>Card Image</h2>
-                <p>Image at the top (card-img-top):</p>
-                <div class="card" style="width:400px">
-                  <img class="card-img-top" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                  </div>
-                </div>
-            </div>
-          </div>
-          <!-- /.card -->    
+
           </div>
         </div>
         <!-- /.row -->

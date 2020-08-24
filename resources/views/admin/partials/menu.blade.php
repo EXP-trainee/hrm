@@ -12,7 +12,7 @@
     </a>
 </li>
 
-@can("roles.view,create,edit,delete")
+{{-- @can("roles.view,create,edit,delete") --}}
 
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.users') ? 'active' : '' }}" href="{{ route(ADMIN . '.users.index') }}">
@@ -23,7 +23,7 @@
     </a>
 </li>
 
-@endcan
+{{-- @endcan --}}
 
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.teams') ? 'active' : '' }}" href="{{ route(ADMIN . '.teams.index') }}">
