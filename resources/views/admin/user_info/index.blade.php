@@ -31,76 +31,99 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-sm-12">
-              <div class="card">
-                <div class="card-header">
-                  
-                  {{-- <h3 class="card-title"><a href="{{route('admin.user-infos.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3> --}}
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table class="table table-bordered table-responsive" >
-                    <thead>
-                      <tr>
-                          <th>STT</th>
-                          <th> Name</th>
-                          <th>Email</th>
-                          <th>Avatar</th>
-                          <th>Phone</th>
-                          {{-- <th>Phone 2</th>
-                          <th>Phone emergency</th> --}}
-                          <th>Dob</th>
-                          <th>National ID</th>
-                          {{-- <th>National ID Image</th>
-                          <th>Driving license</th> --}}
-                          <th>Driving license image</th>
-                          <th>Address</th>
-                          <th>Relationship</th>
-                          <th>Banks</th>
-                          
-                          <th>Bio</th>
-                          <th>Status</th>
-                          <th>Team</th>
-                          <th>action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                          <td>{{$userinfo->id}}</td>
-                          <td>{{$userinfo->name}}</td>
-                          <td>{{$userinfo->email}}</td>
-                          <td>{{$userinfo->avatar}}</td>
-                          <td>{{$userinfo->phone}}
-                              {{$userinfo->phone_2}}
-                              {{$userinfo->phone_emergency}}
-                          </td>
-                          <td>{{$userinfo->dob}}</td>
-                          <td>{{$userinfo->national_id}}</td>
-                          {{-- <td>{{$userinfo->national_id_image}}</td>
-                          <td>{{$userinfo->driving_license}}</td> --}}
-                          <td>{{$userinfo->driving_license_image}}</td>
-                          <td>{{$userinfo->address}}</td>
-                          <td>{{$userinfo->relationship}}</td>
-                          <td>{{$userinfo->banks}}</td>
-                          <td>{{$userinfo->bio}}</td>
-                          <td>{{$userinfo->status}}</td>
-                          <td>{{$userinfo->team?$userinfo->team->name:""}}</td>
-                          <td>
-                              <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
-                              
-                          </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div> 
-                <!-- /.card-body -->
+          <div class="col-md-sm-7">
+            <div class="card">
+              <div class="card-header">
+                <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation</i></a>
               </div>
-              </div>
-              <!-- /.card -->
-
-
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered table-responsive" >
+                    <tr>
+                      <th>STT</th>
+                      <td>{{$userinfo->id}}</td>
+                    </tr>
+                    <tr>
+                      <th> Name</th>
+                      <td>{{$userinfo->name}}</td>
+                    </tr>
+                    <tr>
+                      <th>Email</th>
+                      <td>{{$userinfo->email}}</td>
+                    </tr>
+                    <tr>
+                      <th>Avatar</th>
+                      <td>{{$userinfo->avatar}}</td>
+                    </tr>
+                    <tr>
+                      <th>Phone</th>
+                      <td>{{$userinfo->phone}}
+                          {{$userinfo->phone_2}}
+                          {{$userinfo->phone_emergency}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Dob</th>
+                      <td>{{$userinfo->dob}}</td>
+                    </tr>
+                    <tr>
+                      <th>National ID</th>
+                      <td>{{$userinfo->national_id}}</td>
+                    </tr>
+                    <tr>
+                      <th>Driving license image</th>
+                      <td>{{$userinfo->driving_license_image}}</td>
+                    </tr>
+                    <tr>
+                      <th>Address</th>
+                      <td>{{$userinfo->address}}</td>
+                    </tr>
+                    <tr>
+                      <th>Relationship</th>
+                      <td>{{$userinfo->relationship}}</td>
+                    </tr>
+                    <tr>
+                      <th>Banks</th>
+                      <td>{{$userinfo->banks}}</td>
+                    </tr>
+                    <tr>
+                      <th>Bio</th>
+                      <td>{{$userinfo->bio}}</td>
+                    </tr>
+                    <tr>
+                      <th>Status</th>
+                      <td>{{$userinfo->status}}</td>
+                    </tr>
+                    <tr>
+                      <th>Team</th>
+                      <td>{{$userinfo->team?$userinfo->team->name:""}}</td>
+                    </tr>
+                </table>
+              </div> 
+              <!-- /.card-body -->
             </div>
+          </div>
+        
+          <!-- /.card -->
+          <div class="col-md-sm-3" style="float: right; ">
+            <div class="card"> 
+                <h2>Card Image</h2>
+                <p>Image at the top (card-img-top):</p>
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <!-- /.card -->    
+          </div>
+        </div>
         <!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

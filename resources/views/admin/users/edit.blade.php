@@ -51,17 +51,7 @@
                     <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
-                  {{-- <div class="form-group">
-                    <label for="password">password</label>
-                    <input value="{{$item->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div>
-        
-                  <div class="form-group">
-                    <label for="password_confirmation">password_confirmation</label>
-                    <input type="text" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div> --}}
+                  
                   
                   <div class="form-group">
                     <label for="avatar">avatar</label>
