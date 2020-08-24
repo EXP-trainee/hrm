@@ -24,8 +24,7 @@ class TeamController extends Controller
     {
         // $teams = Team::all();
         $teams = Team::withCount("users")->with(["leader"])->get();
-        //$leader = User::where('id','like' ,"leader_id")->get();
-        //dd($members);
+       
         return view('admin.teams.index', compact("teams"));
     }
 

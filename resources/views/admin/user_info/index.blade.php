@@ -60,7 +60,7 @@
                           
                           <th>Bio</th>
                           <th>Status</th>
-                          <th>Team ID</th>
+                          <th>Team</th>
                           <th>action</th>
                       </tr>
                     </thead>
