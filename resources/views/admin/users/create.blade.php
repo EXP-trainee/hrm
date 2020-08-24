@@ -82,7 +82,7 @@
 			
 					<div class="form-group">
 						<label for="dob">dob</label>
-						<input type="text" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
+						<input type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
 						<small id="helpId" class="text-muted"></small>
 					</div>
 			

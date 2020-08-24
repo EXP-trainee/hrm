@@ -79,8 +79,8 @@
           
                   <div class="form-group">
                       <label for="dob">dob</label>
-                      <input value="{{$item->dob}}" type="dob" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">yyyy/mm/dd</small>
+                      <input value="{{$item->dob}}" type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">mm/dd/yyyy</small>
                   </div>
           
                   <div class="form-group">
