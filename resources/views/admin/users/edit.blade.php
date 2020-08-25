@@ -43,7 +43,7 @@
                   <div class="form-group">
                     <label for="name">Name</label>
                     <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
+                    <small id="helpId" class="text-muted">full name</small>
                   </div>
 
                   <div class="form-group">
@@ -116,7 +116,7 @@
                   <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   <small id="helpId" class="text-muted"></small>
               </div>
-        
+
                 <div class="form-group">
                     <label for="banks">banks </label>
                     <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">

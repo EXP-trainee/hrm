@@ -17,8 +17,6 @@ class Team extends Model
         
     }
 
-    
-
     public function leader()
     {
         return $this->hasOne('App\User',"id", "leader_id");

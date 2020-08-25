@@ -36,7 +36,7 @@
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
-						<small id="helpId" class="text-muted"></small>
+						<small id="helpId" class="text-muted"> full name</small>
 					</div>
 
 					<div class="form-group">
@@ -83,7 +83,7 @@
 					<div class="form-group">
 						<label for="dob">dob</label>
 						<input type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
-						<small id="helpId" class="text-muted"></small>
+						<small id="helpId" class="text-muted">mm/dd/yyyy</small>
 					</div>
 			
 					<div class="form-group">
