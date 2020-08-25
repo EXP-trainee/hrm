@@ -100,14 +100,5 @@ class TeamController extends Controller
         return back();
     }
 
-    // public function getmember()
-    // {
-   
-    //     $members = Team::with(["users"])->get();
-    //     $leader = User::where('id','like' ,"leader_id")->get();
-    //     //dd($members);
-    //     return view('admin.teams.index', compact("members","leader"));
-        
-    // }
     
 }
