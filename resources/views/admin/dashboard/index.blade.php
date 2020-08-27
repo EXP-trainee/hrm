@@ -65,7 +65,7 @@
 
                 <!-- #Bounce Rate ==================== -->
                 <div class='col-md-3'>
-                    <div class="layers bd bgc-white p-20">
+                    <div class="layers bd bgc-white p-20 ">
                         <div class="layer w-100 mB-10">
                             <h6 class="lh-1">Khen thuong - Ky luat</h6>
                         </div>

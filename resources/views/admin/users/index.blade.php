@@ -57,8 +57,8 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table class="table table-bordered table-responsive">
-                    <thead>
+                  <table class="table table-bordered table-striped table-responsive">
+                    <thead class="thead-dark">
                       <tr>
                           <th>STT</th>
                           <th>Name</th>
