@@ -7,7 +7,7 @@
         <div class="masonry-item  w-100">
             <div class="row gap-20">
                 <!-- #Toatl Visits ==================== -->
-                <div class='col-md-3'>
+                <div class='col-md-3' >
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
                             <h6 class="lh-1">Quản lý nhân viên</h6>
@@ -18,7 +18,7 @@
                                     <span id=""><i class="fas fa-file-user"></i></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">Danh sách nhân viên</span>
+                                    <a href="{{ route(ADMIN . '.users.index') }}"><span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">Danh sách nhân viên</span></a>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                     <span id=""></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">Danh sach Teams</span>
+                                    <a href="{{ route(ADMIN . '.teams.index') }}"><span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">Danh sach Teams</span></a>
                                 </div>
                             </div>
                         </div>
