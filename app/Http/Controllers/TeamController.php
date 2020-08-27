@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->middleware('permission:roles.view', ['only' => ['index','store']]);
-    //     $this->middleware('permission:roles.create', ['only' => ['create','store']]);
-    //     $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
-    //     $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
-    // }
+    function __construct()
+    {
+        $this->middleware('permission:roles.view', ['only' => ['index','store']]);
+        $this->middleware('permission:roles.create', ['only' => ['create','store']]);
+        $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,9 +48,6 @@ class TeamController extends Controller
     {
         $team = new Team;
         Team::create($request->all());
-        // $userinfo->name = $request->name;
-        // $userinfo->leader_id = $request->leader_id;
-        // $userinfo->save();
         return redirect(route('admin.teams.index'));
     }
 
