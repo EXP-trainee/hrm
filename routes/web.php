@@ -10,7 +10,7 @@ Auth::routes();
 | Admin
 |------------------------------------------------------------------------------------
 */
-Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'], function () {
+Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'] , function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::resource('users', 'UserController');
     Route::resource('teams', 'TeamController');

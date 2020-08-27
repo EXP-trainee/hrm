@@ -10,15 +10,15 @@
                 <div class='col-md-3'>
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Total Visits</h6>
+                            <h6 class="lh-1">Quản lý nhân viên</h6>
                         </div>
                         <div class="layer w-100">
                             <div class="peers ai-sb fxw-nw">
                                 <div class="peer peer-greed">
-                                    <span id="sparklinedash"></span>
+                                    <span id=""><i class="fas fa-file-user"></i></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">+10%</span>
+                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-green-50 c-green-500">Danh sách nhân viên</span>
                                 </div>
                             </div>
                         </div>
@@ -29,15 +29,15 @@
                 <div class='col-md-3'>
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Total Page Views</h6>
+                            <h6 class="lh-1">Quan ly luong thang</h6>
                         </div>
                         <div class="layer w-100">
                             <div class="peers ai-sb fxw-nw">
                                 <div class="peer peer-greed">
-                                    <span id="sparklinedash2"></span>
+                                    <span id=""></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">-7%</span>
+                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">Danh sach luong nhan vien</span>
                                 </div>
                             </div>
                         </div>
@@ -48,15 +48,15 @@
                 <div class='col-md-3'>
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Unique Visitor</h6>
+                            <h6 class="lh-1">Quan ly phong ban</h6>
                         </div>
                         <div class="layer w-100">
                             <div class="peers ai-sb fxw-nw">
                                 <div class="peer peer-greed">
-                                    <span id="sparklinedash3"></span>
+                                    <span id=""></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">~12%</span>
+                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-purple-50 c-purple-500">Danh sach Teams</span>
                                 </div>
                             </div>
                         </div>
@@ -67,15 +67,15 @@
                 <div class='col-md-3'>
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Bounce Rate</h6>
+                            <h6 class="lh-1">Khen thuong - Ky luat</h6>
                         </div>
                         <div class="layer w-100">
                             <div class="peers ai-sb fxw-nw">
                                 <div class="peer peer-greed">
-                                    <span id="sparklinedash4"></span>
+                                    <span id=""><i class="fas fa-file-user"></i></span>
                                 </div>
                                 <div class="peer">
-                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">33%</span>
+                                    <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-blue-50 c-blue-500">Danh sach thuong phat</span>
                                 </div>
                             </div>
                         </div>

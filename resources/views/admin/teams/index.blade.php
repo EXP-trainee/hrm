@@ -25,7 +25,7 @@
                         <tr class="text-center">
                             <th>ID</th>
                             <th>Team's Name</th>
-                            <th>Leader's Name</th>
+                            <th>Leader's Name </th> 
                             <th>Member's Member</th>
                             <th>Actions</th>
                         </tr>
