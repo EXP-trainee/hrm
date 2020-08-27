@@ -36,7 +36,7 @@
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
-						<small id="helpId" class="text-muted"> full name</small>
+						<small id="helpId" class="text-muted"> full name </small>
 					</div>
 
 					<div class="form-group">
