@@ -33,7 +33,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="sidebar-link " href="">
+    <a class="sidebar-link " href="#">
         <span class="icon-holder">
             <i class="fas fa-hand-holding-usd"></i>
         </span>
@@ -42,7 +42,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="sidebar-link " href="">
+    <a class="sidebar-link " href="#">
         <span class="icon-holder">
             <i class="fas fa-coins"></i>
         </span>
@@ -51,3 +51,12 @@
 </li>
 
 @endcan
+
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="title">Workdays</span>
+    </a>
+</li>

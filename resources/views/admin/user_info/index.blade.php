@@ -25,12 +25,12 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-5">
             <div class="" style="width:400px;"> 
               <img class="card-img-top rounded-circle"vwidth="400" height="400" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-7">
             <div class="">
               <table class="table table-hover table-striped table-responsive" >
                   <tr>
@@ -40,10 +40,6 @@
                   <tr>
                     <th>Email</th>
                     <td>{{$userinfo->email}}</td>
-                  </tr>
-                  <tr>
-                    <th>Avatar</th>
-                    <td>{{$userinfo->avatar}}</td>
                   </tr>
                   <tr>
                     <th>Phone</th>
