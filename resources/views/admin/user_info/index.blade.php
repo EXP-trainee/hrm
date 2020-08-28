@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>List Infomation User</h1>
+            <h1> Infomation Member</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -26,19 +26,16 @@
         <!-- /.row -->
         <div class="row mb-2">
           <div class="col-sm-6">
-            <div class="card" style="width:400px;"> 
-              <h2 style="text-align: center"> {{$userinfo->name}} </h2>
-              <div class="card" style="width:400px">
-                <img class="card-img-top" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
-              </div>
+            <div class="" style="width:400px;"> 
+              <img class="card-img-top rounded-circle"vwidth="400" height="400" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="card">
-              <table class="table table-bordered table-responsive" >
+            <div class="">
+              <table class="table table-hover table-striped table-responsive" >
                   <tr>
-                    <th>STT</th>
-                    <td>{{$userinfo->id}}</td>
+                    <th>name</th>
+                    <td>{{$userinfo->name}}</td>
                   </tr>
                   <tr>
                     <th>Email</th>

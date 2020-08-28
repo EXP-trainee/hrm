@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a2446d3347.js" crossorigin="anonymous"></script>
 
-
+    
     @yield('css')
 
 </head>
