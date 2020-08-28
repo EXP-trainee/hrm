@@ -69,7 +69,7 @@
                           {{-- <th>Phone 2</th>
                           <th>Phone emergency</th> --}}
                           <th>Dob</th>
-                          <th>National ID</th>
+                          {{-- <th>National ID</th> --}}
                           {{-- <th>National ID Image</th> --}}
                           {{-- <th>Driving license</th> --}}
                           <th>Driving license image</th>
@@ -77,7 +77,7 @@
                           <th>Relationship</th>
                           <th>Banks</th>
                           {{-- <th>Role</th> --}}
-                          <th>Bio</th>
+                          {{-- <th>Bio</th> --}}
                           <th>Status</th>
                           <th>Team </th>
                           <th>action</th>
@@ -97,7 +97,7 @@
                             {{$item->phone_emergency}}
                           </td>
                           <td>{{$item->dob}}</td>
-                          <td>{{$item->national_id}}</td>
+                          {{-- <td>{{$item->national_id}}</td> --}}
                           {{-- <td>{{$item->national_id_image}}</td> --}}
                           {{-- <td>{{$item->driving_license}}</td> --}}
                           <td>{{$item->driving_license_image}}</td>
@@ -105,7 +105,7 @@
                           <td>{{$item->relationship}}</td>
                           <td>{{$item->banks}}</td>
                           {{-- <td>{{$item->role}}</td> --}}
-                          <td>{{$item->bio}}</td>
+                          {{-- <td>{{$item->bio}}</td> --}}
                           <td>{{$item->status}}</td>
 
                           {{-- ?là viết tắt của if else --}}
