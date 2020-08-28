@@ -57,9 +57,22 @@ class GeneratePermission extends Command
 
         $role = Role::updateOrCreate(['name' => 'Role User'], ['name' => 'Role User']);
         $role->givePermissionTo('roles.edit','roles.view');
-        $users = User::all();
+
+        Permission::updateOrCreate(['name' => 'users.*'], ['name' => 'users.*']);
+        Permission::updateOrCreate(['name' => 'users.view'],['name' => 'users.view']);
+        Permission::updateOrCreate(['name' => 'users.create'],['name' => 'users.create']);
+        Permission::updateOrCreate(['name' => 'users.edit'],['name' => 'users.edit']);
+        Permission::updateOrCreate(['name' => 'users.delete'],['name' => 'users.delete']);
+
+        $role = Role::updateOrCreate(['name' => 'User Manager'], ['name' => 'User Manager']);
+        $role->givePermissionTo('users.*');
+
+        $role = Role::updateOrCreate(['name' => 'Member'], ['name' => 'Member']);
+        $role->givePermissionTo('users.edit','users.view');
+        $users = User::Auth();
+
         foreach($users as $user){
-            $user->assignRole("Role User");
+            $user->assignRole("Member");
         }
 
         return 0;
