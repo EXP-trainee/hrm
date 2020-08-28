@@ -108,6 +108,9 @@ class UserController extends Controller
 
         $item->update($request->all());
 
+        // neu admin edit thi tro ve trang user.index con la member sua thong tin cua minh
+        // thi back ve trang user_info.index
+
         return redirect()->route(ADMIN . '.users.index')->withSuccess(trans('app.success_update'));
     }
 

@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/getuser', 'UserController@getuser')->name('getuser');
 
-Route::post('/file','UserController@doUpload')-> name('file');
+// Route::post('/file','UserController@doUpload')-> name('file');
 
 // Route::get('/getmember', 'TeamController@getmember')->name('getmember');
 
