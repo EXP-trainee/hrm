@@ -43,9 +43,10 @@
                   </tr>
                   <tr>
                     <th>Phone</th>
-                    <td><div>{{$userinfo->phone}}</div>
-                        <div>{{$userinfo->phone_2}}</div>
-                        <div>{{$userinfo->phone_emergency}}</div>
+                    <td>
+                      <div>{{$userinfo->phone}}</div>
+                      <div>{{$userinfo->phone_2}}</div>
+                      <div>{{$userinfo->phone_emergency}}</div>
                     </td>
                   </tr>
                   <tr>

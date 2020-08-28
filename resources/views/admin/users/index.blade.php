@@ -71,7 +71,7 @@
                           <th>Phone emergency</th> --}}
                           <th>Dob</th>
                           {{-- <th>National ID</th> --}}
-                          {{-- <th>National ID Image</th> --}}
+                          <th>National ID Image</th>
                           {{-- <th>Driving license</th> --}}
                           <th>Driving license image</th>
                           <th>Address</th>
@@ -100,7 +100,7 @@
                           </td>
                           <td>{{$item->dob}}</td>
                           {{-- <td>{{$item->national_id}}</td> --}}
-                          {{-- <td>{{$item->national_id_image}}</td> --}}
+                          <td>{{$item->national_id_image}}</td>
                           {{-- <td>{{$item->driving_license}}</td> --}}
                           <td>{{$item->driving_license_image}}</td>
                           <td>{{$item->address}}</td>
