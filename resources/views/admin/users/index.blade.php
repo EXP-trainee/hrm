@@ -60,11 +60,12 @@
                   <table class="table table-bordered table-striped table-responsive">
                     <thead class="thead-dark">
                       <tr>
-                          <th>STT</th>
+                          {{-- <th>STT</th> --}}
+                          <th>Avatar</th>
                           <th>Name</th>
                           <th>Emal</th>
                           {{-- <th>Password</th> --}}
-                          <th>Avatar</th>
+
                           <th>Phone</th>
                           {{-- <th>Phone 2</th>
                           <th>Phone emergency</th> --}}
@@ -86,11 +87,12 @@
                     @foreach ($items as $item)
                     <tbody>
                       <tr>
-                          <td>{{$item->id}}</td>
+                          {{-- <td>{{$item->id}}</td> --}}
+                          <td><img src="{{$item->avatar}}" alt=""></td>
                           <td>{{$item->name}}</td>
                           <td>{{$item->email}}</td>
                           {{-- <td>{{$item->password}}</td> --}}
-                          <td><img src="{{$item->avatar}}" alt=""></td>
+
                           <td>
                             {{$item->phone}}
                             {{$item->phone_2}}
