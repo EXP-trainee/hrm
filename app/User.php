@@ -89,33 +89,33 @@ class User extends Authenticatable
         
     }
 
-    // public function getNationalImageAttribute($value)
-    // {
-    //     if (!$value) {
-    //         return 'https://placehold.it/160x160';
-    //     }
+    public function getNationalImageAttribute($value)
+    {
+        if (!$value) {
+            return 'https://placehold.it/160x160';
+        }
     
-    //     return config('variables.national_id_image.public').$value;
-    // }
-    // public function setNationalImageAttribute($photo)
-    // {
-    //     $this->attributes['national_id_image'] = move_file($photo, 'national_id_image');
+        return config('variables.national_id_image.public').$value;
+    }
+    public function setNationalImageAttribute($photo)
+    {
+        $this->attributes['national_id_image'] = move_file($photo, 'national_id_image');
         
-    // }
+    }
 
-    // public function getDrivingLicenseImageAttribute($value)
-    // {
-    //     if (!$value) {
-    //         return 'https://placehold.it/160x160';
-    //     }
+    public function getDrivingLicenseImageAttribute($value)
+    {
+        if (!$value) {
+            return 'https://placehold.it/160x160';
+        }
     
-    //     return config('variables.driving_license_image.public').$value;
-    // }
-    // public function setDrivingLicenseImageAttribute($photo)
-    // {
-    //     $this->attributes['driving_license_image'] = move_file($photo, 'driving_license_image');
+        return config('variables.driving_license_image.public').$value;
+    }
+    public function setDrivingLicenseImageAttribute($photo)
+    {
+        $this->attributes['driving_license_image'] = move_file($photo, 'driving_license_image');
         
-    // }
+    }
 
     /*
     |------------------------------------------------------------------------------------
