@@ -89,7 +89,7 @@ class User extends Authenticatable
         
     }
 
-    public function getNationalImageAttribute($value)
+    public function getNationalIdImageAttribute($value)
     {
         if (!$value) {
             return 'https://placehold.it/160x160';
@@ -97,7 +97,7 @@ class User extends Authenticatable
     
         return config('variables.national_id_image.public').$value;
     }
-    public function setNationalImageAttribute($photo)
+    public function setNationalIdImageAttribute($photo)
     {
         $this->attributes['national_id_image'] = move_file($photo, 'national_id_image');
         
