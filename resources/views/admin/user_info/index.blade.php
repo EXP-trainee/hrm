@@ -56,11 +56,11 @@
                   </tr>
                   <tr>
                     <th>National ID Image</th>
-                    <td><img width="400" height="300" src="{{$userinfo->national_id_image}}" alt=""></td>
+                    <td><img width="300" height="200" src="{{$userinfo->national_id_image}}" alt=""></td>
                   </tr>
                   <tr>
                     <th>Driving license image</th>
-                    <td><img width="400" height="300" src="{{$userinfo->driving_license_image}}" alt=""></td>
+                    <td><img width="300" height="200" src="{{$userinfo->driving_license_image}}" alt=""></td>
                   </tr>
                   <tr>
                     <th>Address</th>
