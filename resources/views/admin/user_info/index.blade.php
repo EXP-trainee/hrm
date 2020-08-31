@@ -27,8 +27,9 @@
         <div class="row mb-2">
           <div class="col-sm-5">
             <div class="" style="width:400px;"> 
-              <img class="card-img-top rounded-circle"vwidth="400" height="400" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
+              <img class="card-img-top rounded-circle" width="400" height="400" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
             </div>
+
           </div>
           <div class="col-sm-7">
             <div class="">
@@ -54,12 +55,12 @@
                     <td>{{$userinfo->dob}}</td>
                   </tr>
                   <tr>
-                    <th>National ID</th>
-                    <td>{{$userinfo->national_id}}</td>
+                    <th>National ID Image</th>
+                    <td><img width="400" height="300" src="{{$userinfo->national_id_image}}" alt=""></td>
                   </tr>
                   <tr>
                     <th>Driving license image</th>
-                    <td>{{$userinfo->driving_license_image}}</td>
+                    <td><img width="400" height="300" src="{{$userinfo->driving_license_image}}" alt=""></td>
                   </tr>
                   <tr>
                     <th>Address</th>

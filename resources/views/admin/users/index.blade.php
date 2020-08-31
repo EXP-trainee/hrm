@@ -100,9 +100,9 @@
                           </td>
                           <td>{{$item->dob}}</td>
                           {{-- <td>{{$item->national_id}}</td> --}}
-                          <td>{{$item->national_id_image}}</td>
+                          <td><img src="{{$item->national_id_image}}" alt=""></td>
                           {{-- <td>{{$item->driving_license}}</td> --}}
-                          <td>{{$item->driving_license_image}}</td>
+                          <td><img src="{{$item->driving_license_image}}" alt=""></td>
                           <td>{{$item->address}}</td>
                           <td>{{$item->relationship}}</td>
                           <td>{{$item->banks}}</td>
