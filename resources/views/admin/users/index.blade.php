@@ -188,9 +188,6 @@
                         </div>
                       </div>
 
-
-
-
                     </div>
                     <div class="col-md-4">
                       
@@ -268,7 +265,7 @@
                           <td>{{$item->team?$item->team->name:""}}</td> 
                           <td>
                               <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
-                              
+                              <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
                               <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
@@ -287,9 +284,42 @@
             </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+
+
+
+      <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" class="float-left">Update InfoUser</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <script>
+    $(document).ready(function(){
+      $("#myBtn").click(function(){
+        $("#myModal").modal();
+      });
+    });
+  </script>
 
 @endsection
