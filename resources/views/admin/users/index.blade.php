@@ -38,7 +38,6 @@
                     <div class="col-md-4">
                       {{-- <h3 class="card-title"><a href="{{route('admin.users.create')}}"><button class="btn btn-primary">Create UserInfo</button></a></h3> --}}
 
-
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create UserInfo </button>
 
                       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -264,8 +263,9 @@
                           {{-- ?là viết tắt của if else --}}
                           <td>{{$item->team?$item->team->name:""}}</td> 
                           <td>
-                              <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
-                              <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
+                              {{-- <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a> --}}
+                              
+                              <button type="button" class="btn btn-info" id="myBtn"><i class="fa fa-edit " aria-hidden="true"></i></button>
                               <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
@@ -289,7 +289,7 @@
 
       <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -299,10 +299,128 @@
          
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
+            @method('PUT')
+            <div class="card-body">
+              @csrf
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">full name</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <label for="avatar">avatar</label>
+                    <input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+          
+                  <div class="form-group">
+                      <label for="phone"> phone</label>
+                      <input value="{{$item->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">10 số</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone_2"> phone_2 </label>
+                    <input value="{{$item->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                </div>
+          
+                  <div class="form-group">
+                      <label for="phone_emergency">phone emergency </label>
+                      <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
+                  </div>
+          
+                  <div class="form-group">
+                      <label for="dob">dob</label>
+                      <input value="{{$item->dob}}" type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">mm/dd/yyyy</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="national_id">national id</label>
+                    <input value="{{$item->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="national_id_image">national id image</label>
+                    <input value="{{$item->national_id_image}}" type="file" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="driving_license">driving license</label>
+                    <input value="{{$item->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+    
+                  <div class="form-group">
+                      <label for="driving_license_image">driving license image</label>
+                      <input value="{{$item->driving_license_image}}" type="file" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
+                  </div>
+          
+                  <div class="form-group">
+                      <label for="address">address</label>
+                      <input value="{{$item->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="relationship">relationship</label>
+                    <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                </div>
+  
+                  <div class="form-group">
+                      <label for="banks">banks </label>
+                      <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
+                  </div>
+          
+                  <div class="form-group">
+                      <label for="bio">bio</label>
+                      <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted"></small>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="status">status</label>
+                    <input value="{{$item->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="my-select">Team</label>
+                    <select id="my-select" class="form-control" name="team_id">
+        
+                      @foreach ($teams as $item)
+                    <option value="{{$item->id}}"> {{$item->name}} </option>
+                      @endforeach
+                      
+                    </select>
+                  </div>
+                </div>
+              </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">UPDATE</button>
+            </div>
+          </form>
         </div>
       </div>
       
