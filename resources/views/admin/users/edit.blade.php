@@ -1,4 +1,4 @@
-@extends('admin.default')
+{{-- @extends('admin.default')
 
 @section('page-header')
 	User <small>{{ trans('app.update_item') }}</small>
@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              {{-- <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
+              <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
                 @method('PUT')
                 <div class="card-body">
                   @csrf
@@ -159,7 +159,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">UPDATE</button>
                 </div>
-              </form> --}}
+              </form>
             </div>
             <!-- /.card -->           
         </div>
@@ -170,4 +170,4 @@
   </div>
   <!-- /.content-wrapper -->
 	
-@stop
+@stop --}}

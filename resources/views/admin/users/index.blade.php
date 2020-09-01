@@ -264,8 +264,8 @@
                           <td>{{$item->team?$item->team->name:""}}</td> 
                           <td>
                               {{-- <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a> --}}
+                              <a href="{{route('admin.users.edit',['user' => $item->id])}}"><button type="button" class="btn btn-info" id="myBtn" ><i class="fa fa-edit " aria-hidden="true"></i></button></a>
                               
-                              <button type="button" class="btn btn-info" id="myBtn"><i class="fa fa-edit " aria-hidden="true"></i></button>
                               <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
@@ -435,6 +435,7 @@
   <script>
     $(document).ready(function(){
       $("#myBtn").click(function(){
+
         $("#myModal").modal();
       });
     });
