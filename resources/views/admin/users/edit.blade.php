@@ -1,4 +1,4 @@
-{{-- @extends('admin.default')
+@extends('admin.default')
 
 @section('page-header')
 	User <small>{{ trans('app.update_item') }}</small>
@@ -170,4 +170,4 @@
   </div>
   <!-- /.content-wrapper -->
 	
-@stop --}}
+@stop
