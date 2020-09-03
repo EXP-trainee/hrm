@@ -17,7 +17,7 @@
             @include('admin.partials.topbar')
 
             <!-- ### $App Screen Content ### -->
-            <main class='main-content bgc-grey-100'>
+            {{-- <main class='main-content bgc-grey-100'> --}}
                 <div id='mainContent'>
                     <div class="container-fluid">
 
@@ -28,7 +28,7 @@
 
                     </div>
                 </div>
-            </main>
+            {{-- </main> --}}
 
             <!-- ### $App Screen Footer ### -->
             <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">

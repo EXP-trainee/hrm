@@ -10,6 +10,19 @@ use App\User;
 
 class UserController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:roles.view', ['only' => ['index','store']]);
+        $this->middleware('permission:roles.create', ['only' => ['create','store']]);
+        $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
+
+        $this->middleware('permission:users.view', ['only' => ['index','store']]);
+        $this->middleware('permission:users.create', ['only' => ['create','store']]);
+        $this->middleware('permission:users.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:users.delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -95,6 +108,9 @@ class UserController extends Controller
 
         $item->update($request->all());
 
+        // neu admin edit thi tro ve trang user.index con la member sua thong tin cua minh
+        // thi back ve trang user_info.index
+
         return redirect()->route(ADMIN . '.users.index')->withSuccess(trans('app.success_update'));
     }
 
@@ -115,7 +131,7 @@ class UserController extends Controller
     {
         $userinfo = User::find(auth()->id());
         // dd( $userinfo);
-        return view('user_info.index', compact('userinfo'));
+        return view('admin.user_info.index', compact('userinfo'));
     }
 
 }

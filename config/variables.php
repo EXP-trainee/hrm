@@ -24,6 +24,20 @@ return [
         'width'  => 400,
         'height' => 400,
     ],
+    'national_id_image' => [
+        'public' => '/storage/national_id_image/',
+        'folder' => 'national_id_image',
+        
+        'width'  => 600,
+        'height' => 400,
+    ],
+    'driving_license_image' => [
+        'public' => '/storage/driving_license_image/',
+        'folder' => 'driving_license_image',
+        
+        'width'  => 600,
+        'height' => 400,
+    ],
 
     /*
     |------------------------------------------------------------------------------------

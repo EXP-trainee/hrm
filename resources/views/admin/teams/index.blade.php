@@ -25,7 +25,7 @@
                         <tr class="text-center">
                             <th>ID</th>
                             <th>Team's Name</th>
-                            <th>Leader's Name</th>
+                            <th>Leader's Name </th> 
                             <th>Member's Member</th>
                             <th>Actions</th>
                         </tr>
@@ -36,9 +36,7 @@
                                 <td>{{ $team->id }}</td>
                                 <td>{{ $team->name }}</td> 
                                 <td>{{ $team->leader?$team->leader->name:""}}</td>
-                                {{-- @foreach ($member as $user)
-                                <td>{{ $users->name}}</td>
-                                @endforeach  --}}
+                                
                                 <td>{{$team->users_count}}</td>
                                
                                 <td>

@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'bio', 'team_id',
+        'name', 'email', 'password', 'avatar','phone','phone_2','phone_emergency', 'bio', 'team_id', 'dob' ,'national_id' , 'national_id_image' , 'driving_license' , 'driving_license_image' , 'address','relationship', 'banks', 'status','bank',
     ];
 
     /**
@@ -50,7 +50,8 @@ class User extends Authenticatable
         $common = [
             'email'    => "required|email|unique:users,email,$id",
             'password' => 'nullable|confirmed',
-            'avatar' => 'image',
+            'avatar','national_id_image','driving_license_image' => 'image',
+
         ];
 
         if ($update) {
@@ -85,6 +86,35 @@ class User extends Authenticatable
     public function setAvatarAttribute($photo)
     {
         $this->attributes['avatar'] = move_file($photo, 'avatar');
+        
+    }
+
+    public function getNationalIdImageAttribute($value)
+    {
+        if (!$value) {
+            return 'https://placehold.it/160x160';
+        }
+    
+        return config('variables.national_id_image.public').$value;
+    }
+    public function setNationalIdImageAttribute($photo)
+    {
+        $this->attributes['national_id_image'] = move_file($photo, 'national_id_image');
+        
+    }
+
+    public function getDrivingLicenseImageAttribute($value)
+    {
+        if (!$value) {
+            return 'https://placehold.it/160x160';
+        }
+    
+        return config('variables.driving_license_image.public').$value;
+    }
+    public function setDrivingLicenseImageAttribute($photo)
+    {
+        $this->attributes['driving_license_image'] = move_file($photo, 'driving_license_image');
+        
     }
 
     /*

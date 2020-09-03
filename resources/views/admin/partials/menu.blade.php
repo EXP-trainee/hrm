@@ -11,10 +11,13 @@
         <span class="title">Dashboard</span>
     </a>
 </li>
+
+@canany("u.view,create,edit,delete")
+
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.users') ? 'active' : '' }}" href="{{ route(ADMIN . '.users.index') }}">
         <span class="icon-holder">
-            <i class="c-brown-500 ti-user"></i>
+            <i class="fas fa-user"></i>
         </span>
         <span class="title">Users Information</span>
     </a>
@@ -23,8 +26,37 @@
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.teams') ? 'active' : '' }}" href="{{ route(ADMIN . '.teams.index') }}">
         <span class="icon-holder">
-            <i class="c-brown-500 ti-user"></i>
+            <i class="fas fa-users"></i>
         </span>
         <span class="title">Teams</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="fas fa-hand-holding-usd"></i>
+        </span>
+        <span class="title">Salary</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="fas fa-coins"></i>
+        </span>
+        <span class="title">Bominus</span>
+    </a>
+</li>
+
+@endcan
+
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="title">Workdays</span>
     </a>
 </li>

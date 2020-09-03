@@ -24,7 +24,7 @@ class users extends Seeder
                 
             ]);
         }
-
+        
         for ($i = 1; $i <= 10 ; $i++) {
             array_push($data, [
                 'name'     => $faker->name(),
@@ -35,4 +35,5 @@ class users extends Seeder
         
         User::insert($data);
     }
+    
 }

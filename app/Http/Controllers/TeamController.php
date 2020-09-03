@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:roles.view', ['only' => ['index','store']]);
+        $this->middleware('permission:roles.create', ['only' => ['create','store']]);
+        $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +24,7 @@ class TeamController extends Controller
     {
         // $teams = Team::all();
         $teams = Team::withCount("users")->with(["leader"])->get();
-        //$leader = User::where('id','like' ,"leader_id")->get();
-        //dd($members);
+       
         return view('admin.teams.index', compact("teams"));
     }
 
@@ -42,9 +48,6 @@ class TeamController extends Controller
     {
         $team = new Team;
         Team::create($request->all());
-        // $userinfo->name = $request->name;
-        // $userinfo->leader_id = $request->leader_id;
-        // $userinfo->save();
         return redirect(route('admin.teams.index'));
     }
 
@@ -94,14 +97,5 @@ class TeamController extends Controller
         return back();
     }
 
-    // public function getmember()
-    // {
-   
-    //     $members = Team::with(["users"])->get();
-    //     $leader = User::where('id','like' ,"leader_id")->get();
-    //     //dd($members);
-    //     return view('admin.teams.index', compact("members","leader"));
-        
-    // }
     
 }

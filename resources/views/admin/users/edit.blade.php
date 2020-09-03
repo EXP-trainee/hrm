@@ -28,7 +28,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -40,122 +40,120 @@
                 @method('PUT')
                 <div class="card-body">
                   @csrf
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div>
+                  <div class="form-row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted">full name</small>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="email">email</label>
+                        <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
+                      
+                      
+                      <div class="form-group">
+                        <label for="avatar">avatar</label>
+                        <input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="phone"> phone</label>
+                          <input value="{{$item->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted">10 số</small>
+                      </div>
+    
+                      <div class="form-group">
+                        <label for="phone_2"> phone_2 </label>
+                        <input value="{{$item->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                    </div>
+              
+                      <div class="form-group">
+                          <label for="phone_emergency">phone emergency </label>
+                          <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted"></small>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="dob">dob</label>
+                          <input value="{{$item->dob}}" type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted">mm/dd/yyyy</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="national_id">national id</label>
+                        <input value="{{$item->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-2"></div>
 
-                  <div class="form-group">
-                    <label for="email">email</label>
-                    <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div>
-                  {{-- <div class="form-group">
-                    <label for="password">password</label>
-                    <input value="{{$item->password}}" type="text" name="password" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div>
+                    <div class="col-md-4">
+
+                      <div class="form-group">
+                        <label for="national_id_image">national id image</label>
+                        <input value="{{$item->national_id_image}}" type="file" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
+                      <div class="form-group">
+                        <label for="driving_license">driving license</label>
+                        <input value="{{$item->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
         
-                  <div class="form-group">
-                    <label for="password_confirmation">password_confirmation</label>
-                    <input type="text" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div> --}}
-                  
-                  <div class="form-group">
-                    <label for="avatar">avatar</label>
-                    <input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                  </div>
-          
-                  <div class="form-group">
-                      <label for="phone"> phone</label>
-                      <input value="{{$item->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">10 số</small>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="phone_2"> phone_2 </label>
-                    <input value="{{$item->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-          
-                  <div class="form-group">
-                      <label for="phone_emergency">phone emergency </label>
-                      <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted"></small>
-                  </div>
-          
-                  <div class="form-group">
-                      <label for="dob">dob</label>
-                      <input value="{{$item->dob}}" type="dob" name="sex" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">yyyy/mm/dd</small>
-                  </div>
-          
-                  <div class="form-group">
-                      <label for="national_id">national id</label>
-                      <input value="{{$item->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted"></small>
-                  </div>
-                  <div class="form-group">
-                    <label for="national_id_image">national id image</label>
-                    <input value="{{$item->national_id_image}}" type="text" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-                <div class="form-group">
-                  <label for="driving_license">driving license</label>
-                  <input value="{{$item->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                  <small id="helpId" class="text-muted"></small>
-                </div>
+                      <div class="form-group">
+                          <label for="driving_license_image">driving license image</label>
+                          <input value="{{$item->driving_license_image}}" type="file" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted"></small>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="address">address</label>
+                          <input value="{{$item->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted"></small>
+                      </div>
       
-                <div class="form-group">
-                    <label for="driving_license_image">driving license image</label>
-                    <input value="{{$item->driving_license_image}}" type="text" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-        
-                <div class="form-group">
-                    <label for="address">address</label>
-                    <input value="{{$item->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-
-                <div class="form-group">
-                  <label for="relationship">relationship</label>
-                  <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                  <small id="helpId" class="text-muted"></small>
-              </div>
-        
-                <div class="form-group">
-                    <label for="banks">banks </label>
-                    <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-        
-                <div class="form-group">
-                    <label for="bio">bio</label>
-                    <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                    <small id="helpId" class="text-muted"></small>
-                </div>
-
-                <div class="form-group">
-                  <label for="status">status</label>
-                  <input value="{{$item->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                  <small id="helpId" class="text-muted"></small>
-                </div>
-
-                <div class="form-group">
-                  <label for="my-select">Team</label>
-                  <select id="my-select" class="form-control" name="team_id">
+                      <div class="form-group">
+                        <label for="relationship">relationship</label>
+                        <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                    </div>
       
-                    @foreach ($teams as $item)
-                  <option value="{{$item->id}}"> {{$item->name}} </option>
-                    @endforeach
-                    
-                  </select>
-                </div>
-
+                      <div class="form-group">
+                          <label for="banks">banks </label>
+                          <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted"></small>
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="bio">bio</label>
+                          <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                          <small id="helpId" class="text-muted"></small>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="status">status</label>
+                        <input value="{{$item->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted"></small>
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="my-select">Team</label>
+                        <select id="my-select" class="form-control" name="team_id">
+            
+                          @foreach ($teams as $item)
+                        <option value="{{$item->id}}"> {{$item->name}} </option>
+                          @endforeach
+                          
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
