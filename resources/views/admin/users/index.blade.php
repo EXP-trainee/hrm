@@ -401,11 +401,11 @@
                       <small id="helpId" class="text-muted"></small>
                   </div>
   
-                  {{-- <div class="form-group">
+                  <div class="form-group">
                     <label for="status">status</label>
                     <input value="{{$item->status}}" type="text" name="status" id="status" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
-                  </div> --}}
+                  </div>
   
                   {{-- <div class="form-group">
                     <label for="my-select">Team</label>
@@ -465,9 +465,19 @@
         $('#relationship').val(data[13]);
         $('#banks').val(data[14]);
         $('#bio').val(data[15]);
-
-        
       });
+
+      // $('#editForm').on('submit', function(e){
+      //   e.preventDefault();
+
+      //   var id = $('#id').val();
+
+      //   $ajax({
+      //     type :"PUT",
+      //     url:"/users"+id,
+      //     data: $('#editForm').serialize(),
+      //   });
+      // });
     });
   </script>
 
