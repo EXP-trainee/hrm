@@ -282,17 +282,17 @@
         // $('#bio').val(data[15]);
       });
 
-      $('#editForm').on('submit', function(e){
-        e.preventDefault();
+      // $('#editForm').on('submit', function(e){
+      //   e.preventDefault();
 
-        var id = $('#id').val();
+      //   var id = $('#id').val();
 
-        $ajax({
-          type :"PUT",
-          url:"/users"+id,
-          data: $('#editForm').serialize(),
-        });
-      });
+      //   $ajax({
+      //     type :"PUT",
+      //     url:"/users"+id,
+      //     data: $('#editForm').serialize(),
+      //   });
+      // });
     });
   </script>
 
