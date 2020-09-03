@@ -7,16 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:roles.view', ['only' => ['index','store']]);
-        $this->middleware('permission:roles.create', ['only' => ['create','store']]);
-        $this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:roles.delete', ['only' => ['destroy']]);
-
+       
         $this->middleware('permission:users.view', ['only' => ['index','store']]);
         $this->middleware('permission:users.create', ['only' => ['create','store']]);
         $this->middleware('permission:users.edit', ['only' => ['edit','update']]);
@@ -63,8 +60,8 @@ class UserController extends Controller
     {
         $this->validate($request, User::rules());
         // dd(User::create($request->all()))
-        User::create($request->all());
-
+        $user = User::create($request->all());
+        Permission::updateOrCreate(['name' => "users.edit.{$user->id}"],['name' => "users.edit.{$user->id}"]);
         return back()->withSuccess(trans('app.success_store'));
 
     }
@@ -129,6 +126,7 @@ class UserController extends Controller
 
     public function getuser()
     {
+        dd(auth()->user()->can("users.edit"));
         $userinfo = User::find(auth()->id());
         // dd( $userinfo);
         return view('admin.user_info.index', compact('userinfo'));
