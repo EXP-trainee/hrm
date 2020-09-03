@@ -158,11 +158,11 @@
                                         <small id="helpId" class="text-muted"></small>
                                       </div>
                             
-                                      <div class="form-group">
+                                      {{-- <div class="form-group">
                                         <label for="status">status</label>
                                         <input type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
                                         <small id="helpId" class="text-muted"></small>
-                                      </div>
+                                      </div> --}}
                             
                                       <div class="form-group">
                                         <label for="my-select">Team</label>
@@ -217,8 +217,8 @@
                           {{-- <th>Password</th> --}}
 
                           <th>Phone</th>
-                          {{-- <th>Phone 2</th>
-                          <th>Phone emergency</th> --}}
+                          <th>Phone 2</th>
+                          <th>Phone emergency</th>
                           <th>Dob</th>
                           {{-- <th>National ID</th> --}}
                           <th>National ID Image</th>
@@ -243,11 +243,14 @@
                           <td>{{$item->email}}</td>
                           {{-- <td>{{$item->password}}</td> --}}
 
-                          <td>
+                          {{-- <td>
                             {{$item->phone}}
                             {{$item->phone_2}}
                             {{$item->phone_emergency}}
-                          </td>
+                          </td> --}}
+                          <td>{{$item->phone}}</td>
+                          <td>{{$item->phone_2}}</td>
+                          <td>{{$item->phone_emergency}}</td>
                           <td>{{$item->dob}}</td>
                           {{-- <td>{{$item->national_id}}</td> --}}
                           <td><img src="{{$item->national_id_image}}" alt=""></td>
@@ -265,7 +268,7 @@
                           <td>
                               {{-- <a href="{{route('admin.users.edit',['user' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a> --}}
                               {{-- <a href="{{route('admin.users.edit',['user' => $item->id])}}"><button type="button" class="btn btn-info edit-user " id="myBtn" ><i class="fa fa-edit " aria-hidden="true"></i></button></a> --}}
-                              <button type="button" class="btn btn-info edit-user" id="myBtn" ><i class="fa fa-edit " aria-hidden="true"></i></button>
+                              <button type="button" class="btn btn-info editbtn" id="myBtn" ><i class="fa fa-edit " aria-hidden="true"></i></button>
                               <form action="{{route('admin.users.destroy',['user' => $item->id])}}" method="post">
                                 @csrf
                                 <input type="hidden"  name="_method" value="DELETE">
@@ -288,7 +291,7 @@
 
 
       <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="editModal" role="dialog">
     <div class="modal-dialog modal-lg">
     
       <!-- Modal content-->
@@ -299,34 +302,35 @@
          
         </div>
         <div class="modal-body">
-          <form role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
+          <form id="editForm" role="form" action="{{route('admin.users.update',['user'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
             @method('PUT')
+            @csrf
             <div class="card-body">
               @csrf
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->name}}" type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted">full name</small>
                   </div>
 
                   <div class="form-group">
                     <label for="email">email</label>
-                    <input value="{{$item->email}}" type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->email}}" type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
                   
                   
                   <div class="form-group">
                     <label for="avatar">avatar</label>
-                    <input type="file" name="avatar" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="file" name="avatar" id="avatar" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="phone"> phone</label>
-                      <input value="{{$item->phone}}" type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->phone}}" type="text" name="phone" id="phone" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">10 số</small>
                   </div>
 
@@ -434,11 +438,47 @@
 
   <script>
     $(document).ready(function(){
-      $(".edit-user").click(function(){
-        echo(URL:"{{route('admin.users.destroy',['user' => $item->id])}}");
-        $("#myModal").modal();
+      $('.editbtn').on('click', function(){
+        $('#editModal').modal('show');
+
+        $tr = $(this).closest('tr');
+
+        var data =$tr.children("td").map(function(){
+          return $(this).text();
+        }).get();
+
+        console.log(data);
+
+        $('#id').val(data[0]);
+        // $('#avatar').val(data[1]);
+        // $('#name').val(data[2]);
+        // $('#email').val(data[3]);
+        // $('#phone').val(data[4]);
+        
       });
     });
   </script>
 
 @endsection
+{{-- 
+var table = $('#datatable').DataTable();
+
+      table.on('click','.edit-user',function(){
+        
+        // $('phone').val(phone[4]);
+        // $('phone_2').val(phone_2[5]);
+        // $('phone_emergency').val(phone_emergency[6]);
+        // $('dob').val(dob[7]);
+        // $('national_id').val(national_id[8]);
+        // $('national_id_image').val(national_id_image[9]);
+        // $('driving_license').val(driving_license[10]);
+        // $('driving_license_image').val(driving_license_image[11]);
+        // $('address').val(address[12]);
+        // $('relationship').val(relationship[13]);
+        // $('banks').val(banks[14]);
+        // $('bio').val(bio[15]);
+        // $('status').val(status[16]);
+
+
+        $('#editForm').attr('action','/users/'+data[0]);
+        $('#editModal').modal('show'); --}}
