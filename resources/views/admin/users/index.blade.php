@@ -460,25 +460,3 @@
   </script>
 
 @endsection
-{{-- 
-var table = $('#datatable').DataTable();
-
-      table.on('click','.edit-user',function(){
-        
-        // $('phone').val(phone[4]);
-        // $('phone_2').val(phone_2[5]);
-        // $('phone_emergency').val(phone_emergency[6]);
-        // $('dob').val(dob[7]);
-        // $('national_id').val(national_id[8]);
-        // $('national_id_image').val(national_id_image[9]);
-        // $('driving_license').val(driving_license[10]);
-        // $('driving_license_image').val(driving_license_image[11]);
-        // $('address').val(address[12]);
-        // $('relationship').val(relationship[13]);
-        // $('banks').val(banks[14]);
-        // $('bio').val(bio[15]);
-        // $('status').val(status[16]);
-
-
-        $('#editForm').attr('action','/users/'+data[0]);
-        $('#editModal').modal('show'); --}}
