@@ -218,17 +218,17 @@
                         <input value="{{$userinfo->status}}" type="text" name="status" id="status" class="form-control" placeholder="" aria-describedby="helpId">
                         <small id="helpId" class="text-muted"></small>
                       </div>
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                         <label for="team">Team</label>
                         <input value="{{$userinfo->team?$userinfo->team->name:""}}" type="text" name="team" id="team" class="form-control" placeholder="" aria-describedby="helpId">
                         <small id="helpId" class="text-muted"></small>
-                      </div>
+                      </div> --}}
                       {{-- <div class="form-group">
                         <label for="my-select">Team</label>
                         <select id="my-select" class="form-control" name="team_id">
             
-                          @foreach ($userinfo as $userinfo)
-                        <option value="{{$userinfo->id}}"> {{$userinfo->name}} </option>
+                          @foreach ($teams as $item)
+                        <option value="{{$item->id}}"> {{$item->name}} </option>
                           @endforeach
                           
                         </select>
