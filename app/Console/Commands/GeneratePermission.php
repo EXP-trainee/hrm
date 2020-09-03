@@ -69,7 +69,7 @@ class GeneratePermission extends Command
 
         $role = Role::updateOrCreate(['name' => 'Member'], ['name' => 'Member']);
         $role->givePermissionTo('users.edit','users.view');
-        $users = User::Auth();
+        $users = User::all();
         
         foreach($users as $user){
             $user->assignRole("Member");
