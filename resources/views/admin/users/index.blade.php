@@ -336,24 +336,24 @@
 
                   <div class="form-group">
                     <label for="phone_2"> phone_2 </label>
-                    <input value="{{$item->phone_2}}" type="text" name="phone_2" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->phone_2}}" type="text" name="phone_2" id="phone_2" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
           
                   <div class="form-group">
                       <label for="phone_emergency">phone emergency </label>
-                      <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->phone_emergency}}" type="text" name="phone_emergency" id="phone_emergency" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="dob">dob</label>
-                      <input value="{{$item->dob}}" type="date" name="dob" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->dob}}" type="date" name="dob" id="dob" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted">mm/dd/yyyy</small>
                   </div>
                   <div class="form-group">
                     <label for="national_id">national id</label>
-                    <input value="{{$item->national_id}}" type="text" name="national_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->national_id}}" type="text" name="national_id" id="national_id" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
 
@@ -362,52 +362,52 @@
 
                   <div class="form-group">
                     <label for="national_id_image">national id image</label>
-                    <input value="{{$item->national_id_image}}" type="file" name="national_id_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->national_id_image}}" type="file" name="national_id_image" id="national_id_image" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
                   <div class="form-group">
                     <label for="driving_license">driving license</label>
-                    <input value="{{$item->driving_license}}" type="text" name="driving_license" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->driving_license}}" type="text" name="driving_license" id="driving_license" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                   </div>
     
                   <div class="form-group">
                       <label for="driving_license_image">driving license image</label>
-                      <input value="{{$item->driving_license_image}}" type="file" name="driving_license_image" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->driving_license_image}}" type="file" name="driving_license_image" id="driving_license_image" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="address">address</label>
-                      <input value="{{$item->address}}" type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->address}}" type="text" name="address" id="address" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
   
                   <div class="form-group">
                     <label for="relationship">relationship</label>
-                    <input value="{{$item->relationship}}" type="text" name="relationship" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->relationship}}" type="text" name="relationship" id="relationship" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
                 </div>
   
                   <div class="form-group">
                       <label for="banks">banks </label>
-                      <input value="{{$item->banks}}" type="text" name="banks" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->banks}}" type="text" name="banks" id="banks" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
           
                   <div class="form-group">
                       <label for="bio">bio</label>
-                      <input value="{{$item->bio}}" type="text" name="bio" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input value="{{$item->bio}}" type="text" name="bio" id="bio" class="form-control" placeholder="" aria-describedby="helpId">
                       <small id="helpId" class="text-muted"></small>
                   </div>
   
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     <label for="status">status</label>
-                    <input value="{{$item->status}}" type="text" name="status" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input value="{{$item->status}}" type="text" name="status" id="status" class="form-control" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted"></small>
-                  </div>
+                  </div> --}}
   
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     <label for="my-select">Team</label>
                     <select id="my-select" class="form-control" name="team_id">
         
@@ -417,7 +417,7 @@
                       
                     </select>
                   </div>
-                </div>
+                </div> --}}
               </div>
             <!-- /.card-body -->
 
@@ -450,10 +450,22 @@
         console.log(data);
 
         $('#id').val(data[0]);
-        // $('#avatar').val(data[1]);
-        // $('#name').val(data[2]);
-        // $('#email').val(data[3]);
-        // $('#phone').val(data[4]);
+        $('#avatar').val(data[1]);
+        $('#name').val(data[2]);
+        $('#email').val(data[3]);
+        $('#phone').val(data[4]);
+        $('#phone_2').val(data[5]);
+        $('#phone_emergency').val(data[6]);
+        $('#dob').val(data[7]);
+        $('#national_id').val(data[8]);
+        $('#national_id_image').val(data[9]);
+        $('#driving_license').val(data[10]);
+        $('#driving_license_image').val(data[11]);
+        $('#address').val(data[12]);
+        $('#relationship').val(data[13]);
+        $('#banks').val(data[14]);
+        $('#bio').val(data[15]);
+
         
       });
     });
