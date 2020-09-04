@@ -126,7 +126,7 @@ class UserController extends Controller
 
     public function getuser()
     {
-        dd(auth()->user()->can("users.edit"));
+        // dd(auth()->user()->can("users.edit"));
         $userinfo = User::find(auth()->id());
         // dd( $userinfo);
         return view('admin.user_info.index', compact('userinfo'));
