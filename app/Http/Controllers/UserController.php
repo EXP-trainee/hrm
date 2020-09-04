@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Auth\Access\Authorizable;
 use App\User;
 use Spatie\Permission\Models\Permission;
 
@@ -34,7 +35,7 @@ class UserController extends Controller
             $items = $items->where("team_id",$request->team_id);
         }
 
-        $items = $items->paginate(7);
+        $items = $items->paginate(10);
         return view('admin.users.index', compact('items','teams'));
     }
 
@@ -61,7 +62,7 @@ class UserController extends Controller
         $this->validate($request, User::rules());
         // dd(User::create($request->all()))
         $user = User::create($request->all());
-        Permission::updateOrCreate(['name' => "users.edit.{$user->id}"],['name' => "users.edit.{$user->id}"]);
+        Permission::updateOrCreate(['name' => "users.edit.{$user->id}"],['name' => "users.view.{$user->id}"]);
         return back()->withSuccess(trans('app.success_store'));
 
     }

@@ -88,6 +88,7 @@
                   </tr>
                 </table>
 
+                
                 {{-- <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a> --}}
                 <button type="button" class="btn btn-info editbtn" id="myBtn" > UPDATE INFOMATION</button>
               </div> 
@@ -103,15 +104,14 @@
 
       
       <!-- Modal EDIT-->
-      <div class="modal fade" id="editModal" role="dialog">
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-        
-          <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" class="float-left">Update InfoUser</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
             <div class="modal-body">
               <form  role="form" action="{{route('admin.users.update',['user'=>$userinfo->id])}}" method="POST" enctype="multipart/form-data" >
@@ -218,21 +218,7 @@
                         <input value="{{$userinfo->status}}" type="text" name="status" id="status" class="form-control" placeholder="" aria-describedby="helpId">
                         <small id="helpId" class="text-muted"></small>
                       </div>
-                      {{-- <div class="form-group">
-                        <label for="team">Team</label>
-                        <input value="{{$userinfo->team?$userinfo->team->name:""}}" type="text" name="team" id="team" class="form-control" placeholder="" aria-describedby="helpId">
-                        <small id="helpId" class="text-muted"></small>
-                      </div> --}}
-                      {{-- <div class="form-group">
-                        <label for="my-select">Team</label>
-                        <select id="my-select" class="form-control" name="team_id">
-            
-                          @foreach ($teams as $item)
-                        <option value="{{$item->id}}"> {{$item->name}} </option>
-                          @endforeach
-                          
-                        </select>
-                      </div> --}}
+                      
                     </div>
                   </div>
                 <!-- /.card-body -->

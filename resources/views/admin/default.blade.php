@@ -17,7 +17,7 @@
             @include('admin.partials.topbar')
 
             <!-- ### $App Screen Content ### -->
-            {{-- <main class='main-content bgc-grey-100'> --}}
+            <main class='main-content bgc-grey-100'>
                 <div id='mainContent'>
                     <div class="container-fluid">
 
@@ -39,8 +39,12 @@
     </div>
 
     <script src="{{ mix('/js/app.js') }}"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
 
     @yield('js')
 
