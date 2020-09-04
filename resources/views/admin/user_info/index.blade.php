@@ -90,7 +90,7 @@
 
                 
                 {{-- <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a> --}}
-                <button type="button" class="btn btn-info editbtn" id="myBtn" data-dismiss="modal"> UPDATE INFOMATION</button>
+                <button type="button" class="btn btn-info editbtn" id="myBtn" data-toggle="modal" data-target="#myModal"> UPDATE INFOMATION</button>
               </div> 
              
             </div>
@@ -101,11 +101,13 @@
         <!-- /.row -->
         
       </div><!-- /.container-fluid -->
-
+    
       
       <!-- Modal EDIT-->
-      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-lg">
+        
+          <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">New message</h5>
@@ -222,13 +224,15 @@
                     </div>
                   </div>
                 <!-- /.card-body -->
-
-                <div class="card-footer">
+                <div class="modal-footer">
                   <button type="submit" class="btn btn-primary">UPDATE</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </form>
             </div>
+            
           </div>
+          
         </div>
       </div>
     </section>
@@ -247,6 +251,5 @@
 
 
 @endsection
-
 
   
