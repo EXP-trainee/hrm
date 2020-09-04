@@ -90,7 +90,7 @@
 
                 
                 {{-- <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a> --}}
-                <button type="button" class="btn btn-info editbtn" id="myBtn" > UPDATE INFOMATION</button>
+                <button type="button" class="btn btn-info editbtn" id="myBtn" data-dismiss="modal"> UPDATE INFOMATION</button>
               </div> 
              
             </div>
