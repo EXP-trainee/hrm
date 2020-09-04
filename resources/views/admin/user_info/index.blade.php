@@ -88,7 +88,7 @@
                   </tr>
                 </table>
 
-                <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a>
+                {{-- <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a> --}}
                 <button type="button" class="btn btn-info editbtn" id="myBtn" > UPDATE INFOMATION</button>
               </div> 
              
