@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1> Infomation Member</h1>
+            <h1> Detail infomation user</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
