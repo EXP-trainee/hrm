@@ -242,11 +242,11 @@
 
 
   <script>
-    // $(document).ready(function(){
-    //   $('.editbtn').on('click', function(){
-    //     $('#editModal').modal('show');
-    //   });
-    // });
+    $(document).ready(function(){
+      $('.editbtn').on('click', function(){
+        $('#editModal').modal('show');
+      });
+    });
   </script>
 
 
