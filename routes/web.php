@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Auth::routes();
+//Auth::routes();
+Auth::routes([
+	'register' => false,
+	'verify' => true,
+]);
 
 /*
 |------------------------------------------------------------------------------------
