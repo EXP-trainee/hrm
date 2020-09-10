@@ -241,15 +241,16 @@
   <!-- /.content-wrapper -->
 
 
-  <script>
-    $(document).ready(function(){
-      $('.editbtn').on('click', function(){
-        $('#editModal').modal('show');
-      });
-    });
-  </script>
 
 
 @endsection
+@section("js")
 
-  
+    <script>
+        $(document).ready(function(){
+            $('.editbtn').on('click', function(){
+                $('#editModal').modal('show');
+            });
+        });
+    </script>
+@stop
