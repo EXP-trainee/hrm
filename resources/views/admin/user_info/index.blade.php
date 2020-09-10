@@ -26,7 +26,7 @@
         <!-- /.row -->
         <div class="row mb-2">
           <div class="col-sm-5">
-            <div class="" style="width:400px;"> 
+            <div class="" style="width:400px;">
               <img class="card-img-top rounded-circle" width="400" height="400" src="{{$userinfo->avatar}}" alt="Card image" style="width:100%">
             </div>
 
@@ -91,7 +91,7 @@
                 
                 {{-- <a href="{{route('admin.users.edit',['user' => $userinfo->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"> Update infomation  </i></a> --}}
                 <button type="button" class="btn btn-info editbtn" id="myBtn" data-toggle="modal" data-target="#myModal"> UPDATE INFOMATION</button>
-              </div> 
+              </div>
              
             </div>
 
@@ -100,7 +100,7 @@
         </div>
         <!-- /.row -->
         
-      </div><!-- /.container-fluid -->
+    <!-- /.container-fluid -->
     
       
       <!-- Modal EDIT-->
@@ -116,7 +116,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form  role="form" action="{{route('admin.users.update',['user'=>$userinfo->id])}}" method="POST" enctype="multipart/form-data" >
+              <form role="form" action="{{route('admin.users.update',['user'=>$userinfo->id])}}" method="POST" enctype="multipart/form-data" >
                 @method('PUT')
                 @csrf
                 <div class="card-body">
