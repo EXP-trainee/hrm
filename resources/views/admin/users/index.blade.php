@@ -213,7 +213,7 @@
                           <th>STT</th>
                           <th>Avatar</th>
                           <th>Name</th>
-                          <th>Emal</th>
+                          <th>Email</th>
                           {{-- <th>Password</th> --}}
 
                           <th>Phone</th>
@@ -242,12 +242,6 @@
                           <td>{{$item->name}}</td>
                           <td>{{$item->email}}</td>
                           {{-- <td>{{$item->password}}</td> --}}
-
-                          {{-- <td>
-                            {{$item->phone}}
-                            {{$item->phone_2}}
-                            {{$item->phone_emergency}}
-                          </td> --}}
                           <td>
                             {{$item->phone}}
                             {{$item->phone_2}}
@@ -261,8 +255,6 @@
                           <td>{{$item->address}}</td>
                           <td>{{$item->relationship}}</td>
                           <td>{{$item->banks}}</td>
-                          {{-- <td>{{$item->role}}</td> --}}
-                          {{-- <td>{{$item->bio}}</td> --}}
                           <td>{{$item->status}}</td>
 
                           {{-- ?là viết tắt của if else --}}

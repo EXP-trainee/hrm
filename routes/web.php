@@ -14,6 +14,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.'] , function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::resource('users', 'UserController');
     Route::resource('teams', 'TeamController');
+	Route::resource('roles', 'RoleController');
 
 });
 
