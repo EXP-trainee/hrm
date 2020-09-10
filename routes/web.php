@@ -27,3 +27,7 @@ Route::get('/getuser', 'UserController@getuser')->name('getuser');
 // Route::get('/getmember', 'TeamController@getmember')->name('getmember');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
