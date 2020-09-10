@@ -66,6 +66,7 @@ class GeneratePermission extends Command
 
         $role = Role::updateOrCreate(['name' => 'User Manager'], ['name' => 'User Manager']);
         $role->givePermissionTo('users.*');
+	    User::find(1)->assignRole("User Manager");
 
         $role = Role::updateOrCreate(['name' => 'Member'], ['name' => 'Member']);
         $role->givePermissionTo('users.edit','users.view');

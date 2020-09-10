@@ -13,7 +13,7 @@
     {{-- <link href="{{ mix('/css/rtl.css') }}" rel="stylesheet"> --}}
     
     <!-- ICON -->
-    <script src="https://kit.fontawesome.com/92f747bbb5.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a2446d3347.js" crossorigin="anonymous"></script>
     @yield('css')
 
 </head>
