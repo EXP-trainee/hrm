@@ -12,6 +12,8 @@
     <link href="{{ mix('/css/app.css') }}?v=1" rel="stylesheet">
     {{-- <link href="{{ mix('/css/rtl.css') }}" rel="stylesheet"> --}}
     
+    <!-- ICON -->
+    <script src="https://kit.fontawesome.com/92f747bbb5.js" crossorigin="anonymous"></script>
     @yield('css')
 
 </head>
