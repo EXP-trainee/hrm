@@ -11,6 +11,7 @@ import './vectorMaps';
 import './chat';
 import './datatable';
 import './datepicker';
+import './daterangepicker';
 import './email';
 import './fullcalendar';
 import './googleMaps';
