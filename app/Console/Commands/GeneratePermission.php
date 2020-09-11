@@ -53,7 +53,7 @@ class GeneratePermission extends Command
         
         $role = Role::updateOrCreate(['name' => 'Root'], ['name' => 'Root']);
         $role->givePermissionTo('roles.*');
-        User::find(1)->assignRole("Root");
+        User::find("1")->assignRole("Root");
 
         $role = Role::updateOrCreate(['name' => 'Role User'], ['name' => 'Role User']);
         $role->givePermissionTo('roles.edit','roles.view');
