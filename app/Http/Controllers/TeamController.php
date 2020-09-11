@@ -10,10 +10,7 @@ class TeamController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:users.view', ['only' => ['index','store']]);
-        $this->middleware('permission:users.create', ['only' => ['create','store']]);
-        $this->middleware('permission:users.edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:users.delete', ['only' => ['destroy']]);
+        $this->middleware('permission:users.*');
     }
     /**
      * Display a listing of the resource.
