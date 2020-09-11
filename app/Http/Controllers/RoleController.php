@@ -77,7 +77,8 @@ class RoleController extends Controller
 	 */
 	public function edit($id)
 	{
-	
+		$item = Role::find($id);
+		return view('admin.roles.edit', compact('item'));
 	}
 	
 	/**
@@ -89,7 +90,11 @@ class RoleController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-	
+		$findUpdate = Role::find($id);
+		$findUpdate->name = $request->name;
+		$findUpdate->guard_name = $request->guard_name;
+		$findUpdate->save();
+		return redirect()->route(ADMIN . '.roles.index')->withSuccess(trans('app.success_update'));
 	}
 	
 	/**

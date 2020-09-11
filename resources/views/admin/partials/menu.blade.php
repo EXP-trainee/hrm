@@ -33,23 +33,32 @@
     </a>
 </li>
 
-{{--<li class="nav-item">--}}
-{{--    <a class="sidebar-link " href="#">--}}
-{{--        <span class="icon-holder">--}}
-{{--            <i class="fas fa-hand-holding-usd"></i>--}}
-{{--        </span>--}}
-{{--        <span class="title">Salary</span>--}}
-{{--    </a>--}}
-{{--</li>--}}
+<li class="nav-item">
+    <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.roles') ? 'active' : '' }} " href="{{ route(ADMIN . '.roles.index') }}">
+        <span class="icon-holder">
+            <i class="fas fa-hand-paper"></i>
+        </span>
+        <span class="title">Role</span>
+    </a>
+</li>
 
-{{--<li class="nav-item">--}}
-{{--    <a class="sidebar-link " href="#">--}}
-{{--        <span class="icon-holder">--}}
-{{--            <i class="fas fa-coins"></i>--}}
-{{--        </span>--}}
-{{--        <span class="title">Bominus</span>--}}
-{{--    </a>--}}
-{{--</li>--}}
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="fas fa-hand-holding-usd"></i>
+        </span>
+        <span class="title">Salary</span>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a class="sidebar-link " href="#">
+        <span class="icon-holder">
+            <i class="fas fa-coins"></i>
+        </span>
+        <span class="title">Bominus</span>
+    </a>
+</li>
 
 @endcan
 
@@ -61,11 +70,4 @@
         <span class="title">Workdays</span>
     </a>
 </li>
-<li class="nav-item">
-    <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.roles') ? 'active' : '' }} " href="{{ route(ADMIN . '.roles.index') }}">
-        <span class="icon-holder">
-            <i class="fas fa-hand-paper"></i>
-        </span>
-        <span class="title">Role</span>
-    </a>
-</li>
+

@@ -33,7 +33,6 @@
 					<div class="col-md-10">
 						<div class="card">
 							<div class="card-header">
-								
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create Role </button>
 							</div>
 							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,7 +71,8 @@
 								</div>
 							</div>
 							
-							<!-- /.card-header -->
+							<!-- Modal EDIT-->
+
 							<div class="card-body">
 								<table class="table table-bordered">
 									<thead>
@@ -90,6 +90,8 @@
 											<td>{{$item->name}}</td>
 											<td>{{$item->guard_name}}</td>
 											<td>
+{{--												<a href="{{route('admin.roles.edit',['role' => $item->id])}}"  class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="fa fa-edit " aria-hidden="true"></i></a>--}}
+												<a href="{{route('admin.roles.edit',['role' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
 												<form action="{{route('admin.roles.destroy',['role' => $item->id])}}" method="post">
 													@csrf
 													<input type="hidden"  name="_method" value="DELETE">
@@ -102,15 +104,72 @@
 								</table>
 							</div>
 							<!-- /.card-body -->
-						
+
+<!-- /.card-header -->
+
+{{--							<div class="modal fade" id="editModal" role="dialog">--}}
+{{--								<div class="modal-dialog  modal-lg">--}}
+{{--									--}}
+{{--									<!-- Modal content-->--}}
+{{--									<div class="modal-content">--}}
+{{--										<div class="modal-header">--}}
+{{--											<h5 class="modal-title" id="exampleModalLabel">New message</h5>--}}
+{{--											<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--												<span aria-hidden="true">&times;</span>--}}
+{{--											</button>--}}
+{{--										</div>--}}
+{{--										<div class="modal-body">--}}
+{{--											<form role="form" action="{{route('admin.roles.update',['role'=>$item->id])}}" method="POST" enctype="multipart/form-data" >--}}
+{{--												@method('PUT')--}}
+{{--												@csrf--}}
+{{--												<div class="card-body">--}}
+{{--													@csrf--}}
+{{--													<div class="form-row">--}}
+{{--														<div class="col-md-6">--}}
+{{--															<div class="form-group">--}}
+{{--																<label for="name">Name</label>--}}
+{{--																<input value="{{$item->name}}" type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">--}}
+{{--																<small id="helpId" class="text-muted">full name</small>--}}
+{{--															</div>--}}
+{{--															--}}
+{{--															<div class="form-group">--}}
+{{--																<label for="guard_name">guard name</label>--}}
+{{--																<input value="{{$item->guard_name}}" type="text" name="guard_name" id="email" class="form-control" placeholder="" aria-describedby="helpId">--}}
+{{--																<small id="helpId" class="text-muted"></small>--}}
+{{--															</div>--}}
+{{--														--}}
+{{--														</div>--}}
+{{--													</div>--}}
+{{--													<!-- /.card-body -->--}}
+{{--													<div class="modal-footer">--}}
+{{--														<button type="submit" class="btn btn-primary">UPDATE</button>--}}
+{{--														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
+{{--													</div>--}}
+{{--											</form>--}}
+{{--										</div>--}}
+{{--									</div>--}}
+{{--								--}}
+{{--								</div>--}}
+{{--							</div>--}}
 						
 						</div>
 						<!-- /.card -->
 					</div>
 					<!-- /.row -->
 				</div><!-- /.container-fluid -->
+			
 		</section>
 		<!-- /.content -->
 	</div>
 	<!-- /.content-wrapper -->
+	
+{{--	<script>--}}
+{{--		$(document).ready(function(){--}}
+{{--			$('.editbtn').on('click', function(){--}}
+{{--				$('#editModal').modal('show');--}}
+{{--			});--}}
+{{--		});--}}
+{{--	</script>--}}
+	
+	
 @endsection
