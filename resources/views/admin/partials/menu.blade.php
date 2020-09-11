@@ -12,7 +12,7 @@
     </a>
 </li>
 
-{{--@canany("users.view,users.create,users.edit,users.delete")--}}
+@canany("users.view,users.create,users.edit,users.delete")
 
 <li class="nav-item">
     <a class="sidebar-link {{ Str::startsWith($route, ADMIN . '.users') ? 'active' : '' }}" href="{{ route(ADMIN . '.users.index') }}">
@@ -51,7 +51,7 @@
 {{--    </a>--}}
 {{--</li>--}}
 
-{{--@endcan--}}
+@endcan
 
 <li class="nav-item">
     <a class="sidebar-link " href="#">
