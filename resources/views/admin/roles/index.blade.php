@@ -6,6 +6,7 @@
 
 @section('content')
 	
+	<!-- Content Wrapper. Contains page content -->
 	<div class="content-wrapper">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
@@ -32,9 +33,45 @@
 					<div class="col-md-10">
 						<div class="card">
 							<div class="card-header">
-								{{-- <h3 class="card-title"><a href="#"><button class="btn btn-primary">thêm nhân viên</button></a></h3> --}}
-								<h3 class="card-title"><a href="{{route('role.create')}}"><button class="btn btn-primary">Create InfoUser</button></a></h3>
+								
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create Role </button>
 							</div>
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-md">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<form role="form" action="{{route('admin.roles.store')}}" method="POST" enctype="multipart/form-data" >
+												@csrf
+												<div  class="card-body">
+													<div class="form-group">
+														<label for="name">Name</label>
+														<input type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+														<small id="helpId" class="text-muted"> full name </small>
+													</div>
+													
+													<div class="form-group">
+														<label for="guard_name">Guard name</label>
+														<input type="text" name="guard_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+														<small id="helpId" class="text-muted"></small>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													<button type="submit" class="btn btn-primary">Save</button>
+												</div>
+											</form>
+										</div>
+									
+									</div>
+								</div>
+							</div>
+							
 							<!-- /.card-header -->
 							<div class="card-body">
 								<table class="table table-bordered">
@@ -43,7 +80,7 @@
 										<th>id</th>
 										<th>Name</th>
 										<th>Guard name</th>
-									
+										<th></th>
 									</tr>
 									</thead>
 									@foreach ($listRole as $item)
@@ -53,9 +90,7 @@
 											<td>{{$item->name}}</td>
 											<td>{{$item->guard_name}}</td>
 											<td>
-												<a href="{{route('role.edit',['role' => $item->id])}}" class="btn btn-primary"><i class="fa fa-edit " aria-hidden="true"></i></a>
-												
-												<form action="{{route('role.destroy',['role' => $item->id])}}" method="post">
+												<form action="{{route('admin.roles.destroy',['role' => $item->id])}}" method="post">
 													@csrf
 													<input type="hidden"  name="_method" value="DELETE">
 													<button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden ="true"></i></button>

@@ -19,7 +19,7 @@ class RoleController extends Controller
 		$this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
 		$this->middleware('permission:roles.delete', ['only' => ['destroy']]);
 	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -28,7 +28,7 @@ class RoleController extends Controller
 	public function index()
 	{
 		$listRole =  Role::all();
-		return view('roles.index', ['listRole' => $listRole]);
+		return view('admin.roles.index', ['listRole' => $listRole]);
 	}
 	
 	/**
@@ -49,11 +49,11 @@ class RoleController extends Controller
 	 */
 	public function store(Request $request)
 	{
-//		$role = new Role;
-//		$role->name = $request->name;
-//		$role->guard_name = $request->guard_name;
-//		$role->save();
-//		return redirect(route('role.index'));
+		$role = new Role;
+		$role->name = $request->name;
+		$role->guard_name = $request->guard_name;
+		$role->save();
+		return redirect(route('admin.roles.index'));
 	}
 	
 	/**
@@ -62,9 +62,11 @@ class RoleController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id)
+	public function show(Request $request)
 	{
-		//
+		$this->validate($request, Role::rules());
+		$role = Role::create($request->all());
+		return back()->withSuccess(trans('app.success_store'));
 	}
 	
 	/**
@@ -98,7 +100,7 @@ class RoleController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$findDelete = Role::find($id)->delete();
-		return redirect(route('roles.index'));
+		Role::destroy($id);
+		return back()->withSuccess(trans('app.success_destroy'));
 	}
 }

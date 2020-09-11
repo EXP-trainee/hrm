@@ -60,10 +60,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, User::rules());
-        // dd(User::create($request->all()))
         $user = User::create($request->all());
-//        Permission::updateOrCreate(['name' => "users.view.{$user->id}"],['name' => "users.edit.{$user->id}"]);
-        return back()->withSuccess(trans('app.success_store'));
+	    //        Permission::updateOrCreate(['name' => "users.view.{$user->id}"],['name' => "users.edit.{$user->id}"]);
+	    return back()->withSuccess(trans('app.success_store'));
 
     }
 
