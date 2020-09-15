@@ -59,6 +59,12 @@
 														<input type="text" name="guard_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
 														<small id="helpId" class="text-muted"></small>
 													</div>
+													@foreach ($permissions as $item)
+														<label class="checkbox-inline col-md-3 " style="margin-left: 20px">
+															<input type="checkbox" value="{{$item->id}}" name="permissions[]"> {{$item->name}}
+														</label>
+													@endforeach
+													
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

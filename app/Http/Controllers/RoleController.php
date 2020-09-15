@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
@@ -18,11 +20,6 @@ class RoleController extends Controller
 		$this->middleware('permission:roles.create', ['only' => ['create','store']]);
 		$this->middleware('permission:roles.edit', ['only' => ['edit','update']]);
 		$this->middleware('permission:roles.delete', ['only' => ['destroy']]);
-		
-		$this->middleware('permission:users.view', ['only' => ['index','store']]);
-		$this->middleware('permission:users.create', ['only' => ['create','store']]);
-		$this->middleware('permission:users.edit', ['only' => ['edit','update']]);
-		$this->middleware('permission:users.delete', ['only' => ['destroy']]);
 	}
 
 	/**
@@ -33,7 +30,8 @@ class RoleController extends Controller
 	public function index()
 	{
 		$listRole =  Role::all();
-		return view('admin.roles.index', ['listRole' => $listRole]);
+		$permissions = Permission::all();
+		return view('admin.roles.index', ['listRole' => $listRole,'permissions'=>$permissions]);
 	}
 	
 	/**
@@ -58,9 +56,15 @@ class RoleController extends Controller
 		$role->name = $request->name;
 		$role->guard_name = $request->guard_name;
 		$role->save();
+		
+		$role->syncPermissions($request->permissions);
+		
 		return redirect(route('admin.roles.index'));
+		
+		//		$this->validate($request, Role::rules());
+		//		$role = Role::create($request->all());
+		//		return back()->withSuccess(trans('app.success_store'));
 	}
-	
 	/**
 	 * Display the specified resource.
 	 *
@@ -69,9 +73,7 @@ class RoleController extends Controller
 	 */
 	public function show(Request $request)
 	{
-		$this->validate($request, Role::rules());
-		$role = Role::create($request->all());
-		return back()->withSuccess(trans('app.success_store'));
+
 	}
 	
 	/**
@@ -83,7 +85,9 @@ class RoleController extends Controller
 	public function edit($id)
 	{
 		$item = Role::find($id);
-		return view('admin.roles.edit', compact('item'));
+		$item->load('permissions');
+		$permissions =  Permission::all();
+		return view('admin.roles.edit', compact('item','permissions'));
 	}
 	
 	/**
@@ -99,6 +103,7 @@ class RoleController extends Controller
 		$findUpdate->name = $request->name;
 		$findUpdate->guard_name = $request->guard_name;
 		$findUpdate->save();
+		$findUpdate->syncPermissions($request->permissions);
 		return redirect()->route(ADMIN . '.roles.index')->withSuccess(trans('app.success_update'));
 	}
 	

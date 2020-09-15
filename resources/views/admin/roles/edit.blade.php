@@ -36,7 +36,8 @@
 							</div>
 							<!-- /.card-header -->
 							<!-- form start -->
-							<form role="form" action="{{route('admin.roles.update',['role'=>$item->id])}}" method="POST" enctype="multipart/form-data" >
+							<form role="form" action="{{route('admin.roles.update',['role'=>$item->id])}}" method="POST"
+							      enctype="multipart/form-data">
 								@method('PUT')
 								<div class="card-body">
 									@csrf
@@ -44,20 +45,32 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<label for="name">Name</label>
-												<input value="{{$item->name}}" type="text" name="name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+												<input value="{{$item->name}}" type="text" name="name" id=""
+												       class="form-control" placeholder="" aria-describedby="helpId">
 												<small id="helpId" class="text-muted"></small>
 											</div>
 											
 											<div class="form-group">
 												<label for="guard_name">guard name</label>
-												<input value="{{$item->guard_name}}" type="text" name="guard_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+												<input value="{{$item->guard_name}}" type="text" name="guard_name" id=""
+												       class="form-control" placeholder="" aria-describedby="helpId">
 												<small id="helpId" class="text-muted"></small>
 											</div>
-									<!-- /.card-body -->
-									
-									<div class="card-footer">
-										<button type="submit" class="btn btn-primary">UPDATE</button>
-									</div>
+											
+{{--											@foreach ($permissions as $permission)--}}
+{{--											@foreach($item->permissions as $permission)--}}
+{{--													<label class="checkbox-inline col-md-3 " style="margin-left: 20px">--}}
+{{--														<input type="checkbox" value="{{$item->id}}"--}}
+{{--														       checked="{{in_array($permission,$item->permissions->toArray()) ? 'checked' : ''}}"--}}
+{{--														       name="permissions[]"> {{$item->name}}--}}
+{{--													</label>--}}
+{{--												@endforeach--}}
+{{--											@endforeach--}}
+										<!-- /.card-body -->
+											
+											<div class="card-footer">
+												<button type="submit" class="btn btn-primary">UPDATE</button>
+											</div>
 							</form>
 						</div>
 						<!-- /.card -->
