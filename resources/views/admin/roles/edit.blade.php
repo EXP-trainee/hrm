@@ -57,15 +57,15 @@
 												<small id="helpId" class="text-muted"></small>
 											</div>
 											
-{{--											@foreach ($permissions as $permission)--}}
-{{--											@foreach($item->permissions as $permission)--}}
-{{--													<label class="checkbox-inline col-md-3 " style="margin-left: 20px">--}}
-{{--														<input type="checkbox" value="{{$item->id}}"--}}
-{{--														       checked="{{in_array($permission,$item->permissions->toArray()) ? 'checked' : ''}}"--}}
-{{--														       name="permissions[]"> {{$item->name}}--}}
-{{--													</label>--}}
-{{--												@endforeach--}}
-{{--											@endforeach--}}
+										
+											@foreach($permissions as $item)
+												<label class="checkbox-inline col-md-10 " style="margin-left: 20px">
+													<input type="checkbox" value="{{$item->id}}"
+													       
+													       name="permissions[]"> {{$item->name}}
+												</label>
+											@endforeach
+											
 										<!-- /.card-body -->
 											
 											<div class="card-footer">
